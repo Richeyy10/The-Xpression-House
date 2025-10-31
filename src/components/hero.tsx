@@ -12,11 +12,11 @@ const poppins = localFont({
 })
 
 const geoslab = localFont({
-    src: "../assets/fonts/Geoslab/Typo-Geoslab-Regular.woff2",
+    src: "../assets/fonts/Geoslab/Typo-GeoSlab-Regular.woff2",
 })
 
 const geoslabBold = localFont({
-    src: "../assets/fonts/Geoslab/Typo-Geoslab-Thin.woff2",
+    src: "../assets/fonts/Geoslab/Typo-GeoSlab-Thin.woff2",
 })
 
 export default function Hero() {
