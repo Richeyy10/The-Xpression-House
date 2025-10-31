@@ -8,12 +8,12 @@ import moment6 from "@/assets/images/Moment6.jpg"
 
 export default function Moments() {
     const galleryImages = [
-        {src: moment1, alt: "Xpression House"},
-        {src: moment2, alt: "Xpression House"},
-        {src: moment3, alt: "Xpression House"},
-        {src: moment4, alt: "Xpression House"},
-        {src: moment5, alt: "Xpression House"},
-        {src: moment6, alt: "Xpression House"}
+        {id:1, src: moment1, alt: "Xpression House"},
+        {id:2, src: moment2, alt: "Xpression House"},
+        {id:3, src: moment3, alt: "Xpression House"},
+        {id:4, src: moment4, alt: "Xpression House"},
+        {id:5, src: moment5, alt: "Xpression House"},
+        {id:6, src: moment6, alt: "Xpression House"}
     ]
     return(
         <>
