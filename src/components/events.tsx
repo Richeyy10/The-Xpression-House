@@ -7,7 +7,7 @@ export default function Event() {
         <div id="about" className="h-[60vh] ml-[60px] mb-[60px] flex">
             <div className="block w-[50%] text-center py-[100px]">
                 <h1 className="text-black text-center text-3xl font-bold">Upcoming Events</h1>
-                <p className="text-black text-xl text-justify w-[70%] py-[30px] mx-auto font-happy-times">Ablaze Conference is the annual convention of the Xpression House, a powerful retreat where believers gather to be rekindled in the Word and refreshed in God's presence.</p>
+                <p className="text-black text-xl text-justify w-[70%] py-[30px] mx-auto font-happy-times">Ablaze Conference is the annual convention of the Xpression House, a powerful retreat where believers gather to be rekindled in the Word and refreshed in God&apos;s presence.</p>
                 <p className="text-black text-xl text-justify w-[70%] mx-auto font-happy-times">From October 8th to 12th 2025, hearts will be set ablaze under the theme DOMINION ACTIVATED.</p>
                 <p className="text-black text-xl text-justify w-[70%] mx-auto font-happy-times">An encounter that ignites purpose, Ablaze is for you!</p>
                 <button className="font-happy-times my-[20px] text-1xl rounded-3xl bg-[#37C500] text-white w-[150px] h-[50px] hover:bg-white hover:text-[#37C500]">Read More</button>
