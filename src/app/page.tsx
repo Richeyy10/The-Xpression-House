@@ -20,10 +20,6 @@ const happyTimes = localFont({
   src: "../assets/fonts/Happy-Times/happy-times-at-the-ikob.regular.ttf",
 })
 
-const geoslab = localFont({
-  src: "../assets/fonts/Geoslab/Typo-Geoslab-Regular.woff2",
-})
-
 export default function Home() {
   return (
     <>
