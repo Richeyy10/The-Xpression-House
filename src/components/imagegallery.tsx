@@ -14,9 +14,9 @@ interface ImageGalleryProps {
 export default function ImageGallery( {images} : ImageGalleryProps ) {
     return (
         <div className="container mx-auto px-4 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {images.map((image) => (
-                        <div key={image.id} className="relative h-80 overflow-hidden rounded-lg shadow-lg group">
+                        <div key={image.id} className="relative w-64 md:w-full h-80 overflow-hidden rounded-lg shadow-lg group">
                             <Image
                                 src={image.src}
                                 alt={image.alt}
