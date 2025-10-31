@@ -7,7 +7,7 @@ import MinistryCard from "./ministrycard";
 
 export default function Ministry() {
     return(
-        <div id="ministry" className="h-[220vh] md:h-[90vh] text-center mt-[0px]">
+        <div id="ministry" className="h-[220vh] md:h-[90vh] text-center mt-[40px] mb-[40px]">
             <h1 className="text-black text-center text-xl sm:text-3xl pt-[60px] font-bold">Our Ministries</h1>
             <h5 className="text-md sm:text-xl text-black text-center font-happy-times">Get connected, grow in faith and serve with us</h5>
             <div className="flex flex-col md:flex-row justify-evenly w-[80%] mx-auto mt-16 gap-x-8">

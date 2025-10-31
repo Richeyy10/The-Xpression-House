@@ -4,7 +4,7 @@ import ablaze from "@/assets/images/ablaze.jpg"
 
 export default function Event() {
     return (
-        <div id="about" className="h-[60vh] sm:ml-[60px] mb-[60px] flex">
+        <div id="about" className="h-[60vh] sm:ml-[60px] mt-[40px] mb-[60px] flex">
             <div className="block w-[50%] text-center sm:pt-[100px]">
                 <h1 className="text-black text-center text-xl sm:text-3xl font-bold">Upcoming Events</h1>
                 <p className="text-black text-sm sm:text-xl text-justify w-[70%] pt-[30px] mx-auto font-happy-times">Ablaze Conference is the annual convention of the Xpression House, a powerful retreat where believers gather to be rekindled in the Word and refreshed in God&apos;s presence.</p>

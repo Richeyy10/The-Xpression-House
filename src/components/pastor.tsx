@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function Pastor() {
     return(
         <>
-            <div id="pastor" className="h-[80vh] flex mb-[40px] mb-[0px]">
+            <div id="pastor" className="h-[80vh] flex mb-[40px]">
                 <div className="relative h-[650px] ml-[30px] sm:ml-[150px] bg-cover bg-center block w-[50%]" style={{ backgroundImage: `url(${pastor.src})` }}>
                 </div>
                 <div className="block bg-[#624639] h-[650px] text-center w-[50%] mr-[30px] sm:mr-[150px]">
