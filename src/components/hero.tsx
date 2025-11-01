@@ -22,7 +22,7 @@ const geoslabBold = localFont({
 export default function Hero() {
     return(
         <div id="hero" style={{ backgroundImage: `url(${HeroBackground.src})` }} className="bg-cover bg-center h-screen">
-            <div className="block text-black h-[90vh] text-center py-[45vh]">
+            <div className="block text-black text-center pt-[22%]">
                 <h1 className="text-3xl sm:text-5xl font-happy-times text-white">Welcome to The Xpression House</h1>
                 <div className="block text-center my-8">
                     <h3 className= {`text-md sm:text-2xl font-poppins-black w-[70%] mx-auto text-white ${geoslab.className}`}>The Xpression House is a family of believers passionate about expressing Christ in every sphere of life. It is a home where worship comes alive, the Word brings transformation, and people are empowered to walk in their true identity and purpose</h3>

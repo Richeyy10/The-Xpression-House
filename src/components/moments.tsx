@@ -17,7 +17,7 @@ export default function Moments() {
     ]
     return(
         <>
-            <div id="moment" className="h-[180vh] mb-[40px] mt-[40px] md:h-[120vh] text-center">
+            <div id="moment" className="mb-[40px] mt-[40px] text-center">
                 <h1 className="text-black text-center text-xl md:text-3xl pt-[60px] font-bold">Moments at The Xpression House</h1>
                 <h5 className="text-md md:text-xl text-black text-center font-happy-times">See how God is moving in our midst</h5>
                 <ImageGallery images={galleryImages} />
