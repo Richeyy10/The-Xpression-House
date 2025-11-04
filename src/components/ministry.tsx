@@ -4,12 +4,30 @@ import choir from "@/assets/images/choir.jpg"
 import protocol from "@/assets/images/protocol.jpg"
 import media from "@/assets/images/media.jpg"
 import MinistryCard from "./ministrycard";
+import localFont from "next/font/local";
+
+//Local hosted Fonts
+const happyTimes = localFont({
+    src: "../assets/fonts/Happy-Times/happy-times-at-the-ikob.regular.ttf",
+})
+
+const poppins = localFont({
+    src: "../assets/fonts/poppins/poppins-regular.ttf",
+})
+
+const geoslab = localFont({
+    src: "../assets/fonts/Geoslab/Typo-GeoSlab-Regular.woff2",
+})
+
+const geoslabBold = localFont({
+    src: "../assets/fonts/Geoslab/Typo-GeoSlab-Thin.woff2",
+})
 
 export default function Ministry() {
     return(
-        <div id="ministry" className="text-center mt-[40px] mb-[40px]">
-            <h1 className="text-black text-center text-xl sm:text-3xl pt-[60px] font-bold">Our Ministries</h1>
-            <h5 className="text-md sm:text-xl text-black text-center font-happy-times">Get connected, grow in faith and serve with us</h5>
+        <div id="ministry" className="text-center mt-[40px] mb-[0px]">
+            <h1 className={`text-black text-center text-xl sm:text-3xl pt-[60px] pb-[10px] font-bold ${geoslab.className}`}>Our Ministries</h1>
+            <h5 className={`text-md sm:text-xl text-black text-center ${poppins.className}`}>Get connected, grow in faith and serve with us</h5>
             <div className="flex flex-col md:flex-row justify-evenly w-[80%] mx-auto mt-16 gap-x-8">
                     <MinistryCard
                         imageSrc={choir}
@@ -33,7 +51,7 @@ export default function Ministry() {
                     linkHref="/ministries/media"
                     />
             </div>
-            <button className="font-happy-times mt-[30px] text-1xl rounded-3xl bg-transparent border-2 text-[#37C500] w-[170px] h-[50px] hover:bg-[#37C500] hover:text-white">Explore All Ministries</button>
+            <button className={`font-happy-times mt-[30px] text-1xl rounded-3xl bg-transparent border-2 text-[#37C500] w-[180px] h-[50px] hover:bg-[#37C500] hover:text-white ${poppins.className}`}>Explore All Ministries</button>
         </div>
     )
 }
