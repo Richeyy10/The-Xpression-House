@@ -2,6 +2,13 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import localFont from "next/font/local";
+
+//Local hosted Fonts
+const poppins = localFont({
+  src: "../assets/fonts/poppins/poppins-regular.ttf",
+})
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,12 +32,13 @@ const HamburgerMenu = () => {
         }`}
       >
         <ul className="flex flex-col text-center p-4 space-y-4">
-          <li><a href="/" className="block py-2 px-4 text-white">Home</a></li>
-          <li><a href="/" className="block py-2 px-4 text-white">About US</a></li>
-          <li><a href="/" className="block py-2 px-4 text-white">Ablaze</a></li>
-          <li><a href="/" className="block py-2 px-4 text-white">Ministries</a></li>
-          <li><a href="/" className="block py-2 px-4 text-white">Gallery</a></li>
-          <li><a href="/" className="block py-2 px-4 text-white">Blog</a></li>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>Home</Link>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>About Us</Link>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>Ablaze</Link>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>Ministries</Link>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>Gallery</Link>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>Blog</Link>
+          <Link href="/" className={`block py-2 px-4 text-white ${poppins.className}`}>Contact Us</Link>
         </ul>
       </div>
     </div>
