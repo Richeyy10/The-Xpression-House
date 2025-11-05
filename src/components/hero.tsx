@@ -27,8 +27,8 @@ export default function Hero() {
                 <div className="block text-center my-8">
                     <h3 className= {`text-md sm:text-2xl font-poppins-black w-[70%] mx-auto text-white ${poppins.className}`}>The Xpression House is a family of believers passionate about expressing Christ in every sphere of life. It is a home where worship comes alive, the Word brings transformation, and people are empowered to walk in their true identity and purpose</h3>
                     <div className="flex justify-center my-8 gap-4">
-                    <button className={`font-happy-times my-[20px] text-1xl rounded-3xl bg-[#37C500] text-white w-[100px] sm:w-[150px] h-[40px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Join Us Live</button>
-                    <button className={`font-happy-times my-[20px] text-1xl rounded-3xl bg-[#37C500] text-white w-[100px] sm:w-[150px] h-[40px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Plan A Visit</button>
+                    <button className={`my-[20px] text-1xl rounded-3xl bg-[#37C500] text-white w-[100px] sm:w-[150px] h-[40px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Join Us Live</button>
+                    <button className={`my-[20px] text-1xl rounded-3xl bg-transparent border-2 text-white w-[120px] sm:w-[150px] h-[35px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Plan A Visit</button>
                     </div>
                 </div>
             </div>
