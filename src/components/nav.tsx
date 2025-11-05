@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
 import xpressionHouseLogo from "../assets/images/xph logo png2.png";
+import HamburgerMenu from "./hamburger";
 
 //Local hosted Fonts
 const poppins = localFont({
@@ -28,15 +29,18 @@ export default function Nav() {
     //     }
     // },[])
 
-    return(
-        <div id="nav-container" className={navbar? "relative top-0 left-0 right-0 flex justify-evenly w-[80%] mx-auto my-5 h-[130px] border-2 rounded-lg bg-black" : "relative top-0 left-0 right-0 flex justify-evenly w-[80%] mx-auto my-5 h-[130px] rounded-lg"}>
-            <div id="logo-container" className="pt-[20px]">
-                <Link href = "/">
+    return (
+        <div id="nav-container" className="relative top-0 left-0 right-0 flex justify-evenly w-full md:w-[80%] mx-auto my-5 h-[130px] rounded-lg">
+            <div id="logo-container" className="pt-[20px] ml-[5%] w-[50%] md:w-[100px]">
+                <Link href="/">
                     <Image src={xpressionHouseLogo} alt="Xpression House Logo" width={100} />
                 </Link>
             </div>
+            <div className="pt-[40px] w-[5%] mx-auto md:hidden">
+                <HamburgerMenu />
+            </div>
             <nav className="flex items-center flex-start">
-                <ul className={navbar? "hidden sm:flex items-center gap-4 text-white rounded-full border-1": "hidden sm:flex items-center gap-4 text-black rounded-full border-1"}>
+                <ul className={navbar ? "hidden sm:flex items-center gap-4 text-white rounded-full border-1" : "hidden sm:flex items-center gap-4 text-black rounded-full border-1"}>
                     <li>
                         <Link href="/" className={`h-full block text-1xl decoration-2 ${poppins.className}`}>
                             Home

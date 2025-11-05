@@ -35,11 +35,11 @@ export default function Moments() {
     ]
     return(
         <>
-            <div id="moment" className="mb-[0px] mt-[40px] text-center">
+            <div id="moment" className="mb-[0px] md:mt-[40px] text-center">
                 <h1 className={`text-black text-center text-xl md:text-3xl pt-[60px] pb-[10px] font-bold ${geoslab.className}`}>Moments at The Xpression House</h1>
                 <h5 className={`text-md md:text-xl text-black text-center ${poppins.className}`}>See how God is moving in our midst</h5>
                 <ImageGallery images={galleryImages} />
-                <button className={`mt-[10px] text-1xl rounded-3xl bg-transparent border-2 text-[#37C500] w-[150px] md:w-[180px] h-[40px] md:h-[50px] hover:bg-[#37C500] hover:text-white ${poppins.className}`}>Explore Our Gallery</button>
+                <button className={`mt-[10px] text-1xl rounded-3xl bg-transparent border-2 text-[#37C500] w-[180px] h-[40px] md:h-[50px] hover:bg-[#37C500] hover:text-white ${poppins.className}`}>Explore Our Gallery</button>
             </div>
         </>
     )
