@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Instagram from "../assets/images/instagram.svg";
-import Twitter from "../assets/images/twitter.svg";
-import Youtube from "../assets/images/youtube.svg";
+import Twitter from "../assets/images/twitter.png";
+import Youtube from "../assets/images/youtube.png";
 import localFont from "next/font/local";
 
 //Local hosted Fonts
@@ -81,6 +81,7 @@ export default function Footer() {
                                 src={Instagram}
                                 alt="Instagram contact"
                                 title="Check our feed and send us a DM"
+                                width={20}
                             />
                         </Link>
                         <Link
@@ -92,6 +93,7 @@ export default function Footer() {
                                 src={Twitter}
                                 alt="Twitter contact"
                                 title="Check our feed and send us a DM"
+                                width={20}
                             />
                         </Link>
                         <Link
@@ -103,6 +105,7 @@ export default function Footer() {
                                 src={Youtube}
                                 alt="Instagram contact"
                                 title="Check our feed and send us a DM"
+                                width={20}
                             />
                         </Link>
                     </div>

@@ -31,10 +31,10 @@ export default function Pastor() {
                 </div> */}
                 <div className="block bg-[#624639] md:h-[750px] text-center md:w-[50%] ml-0">
                     <h1 className={`text-white text-center text-xl sm:text-2xl pt-[60px] font-bold ${geoslab.className}`}>MEET OUR LEAD PASTOR</h1>
-                    <p className={`text-sm sm:text-xl text-white text-justify w-[80%] pt-[40px] mx-auto leading-6 sm:leading-8 ${poppins.className}`}>Pastor Akinola Fred Elegbe leads the Xpression House, Mokola, Ibadan. He is a passionate speaker and mentor dedicated to helping young people grow in purpose and impact the world.</p>
-                    <p className={`text-sm sm:text-xl text-white text-justify w-[80%] mx-auto leading-6 sm:leading-8 ${poppins.className}`}>A graduate of NCC Education, Manchester with a background in Computer Studies, He has spent years mentoring people as an English and TOEFL instructor.</p>
-                    <p className={`text-sm sm:text-xl text-white text-justify w-[80%] mx-auto leading-6 sm:leading-8 ${poppins.className}`}>He is also the founder of Kingdom Speakers, an initiative dedicated to equipping the next generation with communication skills and confidence for global impact.</p>
-                    <button className={`my-[10px] text-md sm:text-1xl rounded-3xl bg-transparent border-2 text-white w-[120px] sm:w-[150px] h-[35px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Read More</button>
+                    <p className={`text-sm sm:text-xl text-white text-justify w-[80%] pt-[40px] mx-auto leading-6 sm:leading-10 ${poppins.className}`}>Pastor Akinola Fred Elegbe leads the Xpression House, Mokola, Ibadan. He is a passionate speaker and mentor dedicated to helping young people grow in purpose and impact the world.</p>
+                    <p className={`text-sm sm:text-xl text-white text-justify w-[80%] mx-auto leading-6 sm:leading-10 ${poppins.className}`}>A graduate of NCC Education, Manchester with a background in Computer Studies, He has spent years mentoring people as an English and TOEFL instructor.</p>
+                    <p className={`text-sm sm:text-xl text-white text-justify w-[80%] mx-auto leading-6 sm:leading-10 ${poppins.className}`}>He is also the founder of Kingdom Speakers, an initiative dedicated to equipping the next generation with communication skills and confidence for global impact.</p>
+                    <button className={`my-[10px] text-md sm:text-1xl rounded-3xl bg-transparent border-2 text-white w-[120px] sm:w-[150px] h-[35px] sm:h-[50px] sm:mt-6 hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Read More</button>
                 </div>
             </div>
         </>

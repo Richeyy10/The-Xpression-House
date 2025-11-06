@@ -38,7 +38,7 @@ export default function Ministry() {
     return(
         <div id="ministry" className="text-center md:mt-[40px] mb-[0px]">
             <h1 className={`text-black text-center text-xl sm:text-3xl pt-[60px] pb-[10px] font-bold ${geoslab.className}`}>Our Ministries</h1>
-            <h5 className={`text-md sm:text-xl text-black text-center ${poppins.className}`}>Get connected, grow in faith and serve with us</h5>
+            <h5 className={`text-md w-[80%] mx-auto sm:text-xl text-black text-center ${poppins.className}`}>Get connected, grow in faith and serve with us</h5>
             <div className="flex flex-row md:flex-row no-scrollbar overflow-y-scroll  overflow-x-scroll justify-between md:justify-evenly md:w-[80%] mx-auto mt-16 pl-[40px] md:pl-[0px] gap-x-10 md:gap-x-8"ref={emblaRef}>
                     <MinistryCard
                         imageSrc={choir}
@@ -62,7 +62,7 @@ export default function Ministry() {
                     linkHref="/ministries/media"
                     />
             </div>
-            <button className={`font-happy-times md:mt-[30px] text-1xl rounded-3xl bg-transparent border-2 text-[#37C500] w-[180px] h-[50px] hover:bg-[#37C500] hover:text-white ${poppins.className}`}>Explore All Ministries</button>
+            <button className={`md:mt-[10px] text-1xl rounded-3xl bg-[#37C500] border-2 text-white w-[180px] h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Explore All Ministries</button>
         </div>
     )
 }

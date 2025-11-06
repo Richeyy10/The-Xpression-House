@@ -39,7 +39,7 @@ export default function Moments() {
                 <h1 className={`text-black text-center text-xl md:text-3xl pt-[60px] pb-[10px] font-bold ${geoslab.className}`}>Moments at The Xpression House</h1>
                 <h5 className={`text-md md:text-xl text-black text-center ${poppins.className}`}>See how God is moving in our midst</h5>
                 <ImageGallery images={galleryImages} />
-                <button className={`mt-[10px] text-1xl rounded-3xl bg-transparent border-2 text-[#37C500] w-[180px] h-[40px] md:h-[50px] hover:bg-[#37C500] hover:text-white ${poppins.className}`}>Explore Our Gallery</button>
+                <button className={`mt-[10px] text-1xl rounded-3xl bg-[#37C500] border-2 text-white w-[180px] h-[40px] md:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Explore Our Gallery</button>
             </div>
         </>
     )
