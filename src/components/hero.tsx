@@ -23,9 +23,9 @@ export default function Hero() {
     return(
         <div id="hero" style={{ backgroundImage: `url(${HeroBackground.src})` }} className="bg-cover bg-center h-screen">
             <div className="block text-black text-center pt-[55%] md:pt-[22%]">
-                <h1 className={`text-3xl sm:text-5xl text-white ${geoslab.className}`}>Welcome to The Xpression House</h1>
+                <h1 className={`text-3xl sm:text-7xl text-white ${geoslab.className}`}>Welcome to The Xpression House</h1>
                 <div className="block text-center mt-8">
-                    <h3 className= {`text-md sm:text-2xl font-poppins-black w-[90%] md:w-[70%] mx-auto text-white ${poppins.className}`}>The Xpression House is a family of believers passionate about expressing Christ in every sphere of life. It is a home where worship comes alive, the Word brings transformation, and people are empowered to walk in their true identity and purpose</h3>
+                    <h3 className= {`text-md sm:text-lg font-poppins-black w-[90%] md:w-[70%] mx-auto text-white ${poppins.className}`}>The Xpression House is a family of believers passionate about expressing Christ in every sphere of life. It is a home where worship comes alive, the Word brings transformation, and people are empowered to walk in their true identity and purpose</h3>
                     <div className="flex justify-center my-8 gap-4">
                     <button className={`my-[20px] text-1xl rounded-3xl bg-[#37C500] text-white w-[120px] sm:w-[150px] h-[35px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Join Us Live</button>
                     <button className={`my-[20px] text-1xl rounded-3xl bg-transparent border-2 text-white w-[120px] sm:w-[150px] h-[35px] sm:h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Plan A Visit</button>

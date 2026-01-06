@@ -62,7 +62,7 @@ export default function Footer() {
                 <div className="block w-full">
                     <h1 className={`text-white text-[9px] md:text-xl ${geoslab.className}`}>Join Our Mailing List</h1>
                     <form className={`block md:flex md:flex-col md:mt-6 mt-3 space-y-2 md:space-y-4 text-[9px] md:text-lg text-white ${poppins.className}`}>
-                        <input type="email" name="email" placeholder="Enter your email" className="border-2 w-[100px] md:w-[200px] text-black rounded-2xl pl-[5px] placeholder-sm placeholder-black focus:placeholder-black" required></input>
+                        <input type="email" name="email" placeholder="Enter your email" className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg w-[100px] md:w-[200px] text-black rounded-2xl pl-[5px] placeholder-sm placeholder-black focus:placeholder-white" required></input>
                         <button type="submit" className="border-2 w-[100px] md:w-[200px] bg-white text-[#37C500] rounded-2xl mt-[10px] hover:bg-[#37C500] hover:text-white">Subscribe</button>
                     </form>
                 </div>

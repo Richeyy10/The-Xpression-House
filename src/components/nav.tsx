@@ -30,8 +30,8 @@ export default function Nav() {
     // },[])
 
     return (
-        <div id="nav-container" className="relative top-0 left-0 right-0 flex justify-evenly w-full md:w-[80%] mx-auto my-5 h-[130px] rounded-lg">
-            <div id="logo-container" className="pt-[20px] ml-[5%] w-[50%] md:w-[100px]">
+        <div id="nav-container" className="absolute top-0 left-0 right-0 flex justify-evenly w-full md:w-[100%] mx-auto my-1 rounded-lg">
+            <div id="logo-container" className="pt-[20px] w-[50%] md:w-[100px]">
                 <Link href="/">
                     <Image src={xpressionHouseLogo} alt="Xpression House Logo" width={100} />
                 </Link>
@@ -40,7 +40,7 @@ export default function Nav() {
                 <HamburgerMenu />
             </div>
             <nav className="flex items-center flex-start">
-                <ul className={navbar ? "hidden sm:flex items-center gap-4 text-white rounded-full border-1" : "hidden sm:flex items-center gap-4 text-black rounded-full border-1"}>
+                <ul className={navbar ? "hidden sm:flex items-center gap-4 text-white rounded-full border-1" : "hidden sm:flex items-center gap-6 bg-white/20 backdrop-blur-md border border-white/30 shadow-lg p-4 m-3 text-black rounded-full border-1"}>
                     <li>
                         <Link href="/" className={`h-full block text-1xl decoration-2 ${poppins.className}`}>
                             Home
@@ -74,7 +74,7 @@ export default function Nav() {
                 </ul>
             </nav>
             <div className="flex items-end py-[3%]">
-                <button className={`hidden sm:block text-1xl rounded-3xl bg-[#37C500] text-white w-[150px] h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Contact US</button>
+                <button className={`hidden sm:block text-1xl rounded-3xl bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white w-[150px] h-[50px] hover:bg-white hover:text-[#37C500] ${poppins.className}`}>Contact US</button>
             </div>
         </div>
     )
