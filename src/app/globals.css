@@ -53,3 +53,20 @@
     font-family: "Poppins Black";
     font-weight: 400;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #37C500 !important;
+  height: 20px !important;
+}
+
+
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #37C500 !important;
+  opacity: 1;
+}
