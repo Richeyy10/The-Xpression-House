@@ -295,7 +295,7 @@ header.nav.menu-open {
 
 /* ─── QUOTE ─── */
 .quote {
-  padding: var(--space-lg) var(--space-xl);
+  padding: var(--space-sm) var(--space-xl);
 }
 .quote__inner { max-width: 900px; margin: 0 auto; text-align: center; }
 .quote__label {
@@ -318,10 +318,10 @@ header.nav.menu-open {
 @keyframes quote-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 .quote__slide { animation: quote-in .3s ease-out; }
 .quote__text {
-  font-family: var(--font-quote); font-size: 28px; font-weight: 300;
-  font-style: italic; line-height: 1.8; letter-spacing: .01em; overflow: hidden;
-  color: var(--cream); margin-bottom: var(--space-lg);
-  height: 5.5em;
+  font-family: var(--font-quote); font-size: 34px; font-weight: 300;
+  font-style: italic; line-height: 1.7; letter-spacing: .01em; overflow: hidden;
+  color: var(--cream); margin-bottom: var(--space-sm);
+  height: 3.8em;
 }
 .quote__red-mark {
   display: inline-block; color: var(--accent-red); flex-shrink: 0;
