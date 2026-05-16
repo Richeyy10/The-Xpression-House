@@ -1,6 +1,6 @@
 import { ReactNode, CSSProperties, MouseEventHandler } from 'react'
 
-type Variant = 'primary' | 'secondary' | 'nav'
+type Variant = 'primary' | 'secondary'
 
 interface BaseProps {
   variant?: Variant
