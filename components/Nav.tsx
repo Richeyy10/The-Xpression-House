@@ -98,7 +98,7 @@ export default function Nav() {
         <a href="#events" onClick={closeMenu} className={activeSection === 'events' ? 'active' : undefined}>Events</a>
         <a href="#new" onClick={closeMenu} className={activeSection === 'new' ? 'active' : undefined}>I&apos;m New</a>
         <a href="#contact" onClick={closeMenu} className={activeSection === 'contact' ? 'active' : undefined}>Connect</a>
-        <a href="#give" onClick={closeMenu} className={activeSection === 'give' ? 'active' : undefined}>Give</a>
+        <a href="#give" onClick={closeMenu} className={`nav__give-link${activeSection === 'give' ? ' active' : ''}`}>Give</a>
 
         <div className="nav__social">
           <a href="https://www.instagram.com/thexphng" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

@@ -131,6 +131,8 @@ header.nav.menu-open {
 }
 .nav__links a:hover { color: var(--cream); }
 .nav__links a:hover::after { width: 100%; }
+.nav__give-link { display: none; }
+.nav__links.open .nav__give-link { display: block; }
 
 .btn--primary {
   display: inline-flex; align-items: center; gap: var(--space-xs);
@@ -322,11 +324,8 @@ header.nav.menu-open {
   height: 5.5em;
 }
 .quote__red-mark {
-  display: inline-flex; align-items: center; justify-content: center;
-  color: #fff; background: var(--accent-red);
-  width: 22px; height: 22px; border-radius: 4px;
-  flex-shrink: 0; margin-right: var(--space-xs);
-  vertical-align: middle; position: relative; top: -3px;
+  display: inline-block; color: var(--accent-red); flex-shrink: 0;
+  margin-right: var(--space-xs); vertical-align: middle; position: relative; top: -3px;
 }
 .quote__attr { display: flex; align-items: center; gap: 12px; justify-content: center; }
 .quote__line { width: 40px; height: 1px; background: rgba(240,237,230,.2); }
@@ -1070,6 +1069,9 @@ footer {
 
 /* Social icons pinned to bottom of overlay */
 .nav__social {
+  display: none;
+}
+.nav__links.open .nav__social {
   position: absolute;
   bottom: var(--space-xl);
   left: var(--space-lg);
