@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   title: 'The Xpression House – Where Faith Meets Expression',
   description:
     'The Xpression House is a vibrant, Spirit-led community for young adults in Ibadan. Join us for worship, fellowship, and growth every Sunday at 8:00 AM.',
+  icons: {
+    icon: '/xph_logo_png1.png',
+    apple: '/xph_logo_png1.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
