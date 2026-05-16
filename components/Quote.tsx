@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
+import { IconChevronLeft, IconChevronRight, IconBookmark } from '@tabler/icons-react'
 
 const SCRIPTURES = [
   {
@@ -63,7 +63,7 @@ export default function Quote() {
           </button>
           <div className="quote__slide" key={idx}>
             <blockquote className="quote__text">
-              <span className="quote__red-mark" aria-hidden="true" />
+              <IconBookmark className="quote__red-mark" size={14} aria-hidden="true" />
               {display}
             </blockquote>
             <div className="quote__attr">

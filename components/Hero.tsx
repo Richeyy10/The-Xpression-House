@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { IconMapPin, IconPlayerPlay } from '@tabler/icons-react'
+import Button from './ui/Button'
 
 const HeroCanvas = dynamic(() => import('./HeroCanvas'), { ssr: false })
 
@@ -48,15 +49,10 @@ export default function Hero() {
           Plunge into a<br /><em>captivating</em> worship<br />experience
         </h1>
         <div className="hero__ctas anim a3">
-          <a href="#visit" className="btn--primary">
-            <IconMapPin size={16} aria-hidden /> Visit us
-          </a>
-          <a href="#sermon" className="btn--secondary">
-            <IconPlayerPlay size={16} aria-hidden /> Last Sermon
-          </a>
+          <Button href="#visit" icon={<IconMapPin size={16} aria-hidden />}>Visit us</Button>
+          <Button href="#sermon" variant="secondary" icon={<IconPlayerPlay size={16} aria-hidden />}>Last Sermon</Button>
         </div>
       </div>
-
     </section>
   )
 }

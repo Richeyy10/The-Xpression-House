@@ -1,4 +1,5 @@
-import { IconPlayerPlay, IconArrowRight } from '@tabler/icons-react'
+import { IconPlayerPlay } from '@tabler/icons-react'
+import ArrowLink from './ui/ArrowLink'
 
 export default function About() {
   return (
@@ -20,9 +21,7 @@ export default function About() {
               Through our services, Bible studies, and community events, we provide a space where
               you encounter God&apos;s presence and build lasting relationships.
             </p>
-            <a href="#" className="link--arrow">
-              Discover our community <IconArrowRight size={14} aria-hidden />
-            </a>
+            <ArrowLink>Discover our community</ArrowLink>
           </div>
         </div>
         <div

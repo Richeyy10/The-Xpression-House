@@ -26,7 +26,7 @@ export default function Home() {
         <Setlist />
         <Sermon />
         <Pastor />
-        <HeadChurch />
+        {/* <HeadChurch /> */}
         <GivingCTA />
         <Visit />
         <Newsletter />

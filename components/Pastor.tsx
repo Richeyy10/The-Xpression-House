@@ -1,12 +1,18 @@
-import { IconUser, IconArrowRight } from '@tabler/icons-react'
+import Image from 'next/image'
+import ArrowLink from './ui/ArrowLink'
 
 export default function Pastor() {
   return (
     <section className="pastor" id="pastor" aria-labelledby="pastor-heading">
       <div className="pastor__inner">
-        <div className="pastor__photo" role="img" aria-label="Photo of Pastor Fred A. Elegbe">
-          <IconUser size={80} aria-hidden />
-          <div className="pastor__photo-accent" />
+        <div className="pastor__photo">
+          <Image
+            src="/PFE.jpg"
+            alt="Pastor Fred A. Elegbe"
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            priority
+          />
         </div>
         <div>
           <div className="pastor__overline">
@@ -28,9 +34,7 @@ export default function Pastor() {
             Xpression House has grown from a small gathering into a vibrant community of
             believers impacting Ibadan and beyond.
           </p>
-          <a href="#" className="link--arrow">
-            Learn more about our leadership <IconArrowRight size={14} aria-hidden />
-          </a>
+          <ArrowLink>Learn more about our leadership</ArrowLink>
         </div>
       </div>
     </section>

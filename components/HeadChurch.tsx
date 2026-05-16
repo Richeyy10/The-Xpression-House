@@ -1,4 +1,5 @@
-import { IconBuildingChurch, IconUsers, IconWorld, IconArrowRight } from '@tabler/icons-react'
+import { IconBuildingChurch, IconUsers, IconWorld } from '@tabler/icons-react'
+import ArrowLink from './ui/ArrowLink'
 
 export default function HeadChurch() {
   return (
@@ -33,9 +34,7 @@ export default function HeadChurch() {
               Impacting communities beyond Ibadan
             </div>
           </div>
-          <a href="#" className="link--arrow">
-            Visit The Stone Church <IconArrowRight size={14} aria-hidden />
-          </a>
+          <ArrowLink>Visit The Stone Church</ArrowLink>
         </div>
         <div className="headchurch__photo" role="img" aria-label="The Stone Church">
           <IconBuildingChurch size={64} aria-hidden />

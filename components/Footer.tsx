@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="footer__brand-logo">
             <span className="footer__brand-mark">
               <Image
-                src="/xph logo png1.png"
+                src="/xph_logo_png2.png"
                 alt="XPH Logo"
                 fill
                 style={{ objectFit: 'contain', padding: '6px' }}
@@ -25,11 +25,13 @@ export default function Footer() {
           </div>
           <p>A vibrant, Spirit-led community for young adults in Ibadan and beyond.</p>
           <div className="footer__socials">
-            <a href="#" aria-label="Instagram"><IconBrandInstagram size={16} aria-hidden /></a>
-            <a href="#" aria-label="Facebook"><IconBrandFacebook size={16} aria-hidden /></a>
+            <a href="https://www.instagram.com/thexphng" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><IconBrandInstagram size={16} aria-hidden /></a>
+            <a href="https://www.facebook.com/thexphng" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><IconBrandFacebook size={16} aria-hidden /></a>
             <a href="#" aria-label="X"><IconBrandX size={16} aria-hidden /></a>
-            <a href="#" aria-label="YouTube"><IconBrandYoutube size={16} aria-hidden /></a>
+            <a href="https://www.youtube.com/@thexphng" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><IconBrandYoutube size={16} aria-hidden /></a>
             <a href="#" aria-label="TikTok"><IconBrandTiktok size={16} aria-hidden /></a>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <a href="https://thexphng.mixlr.com/" target="_blank" rel="noopener noreferrer" aria-label="Mixlr"><img src="/mixlr.logo.svg" alt="" width={16} height={16} aria-hidden /></a>
           </div>
         </div>
 
@@ -60,10 +62,6 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <span>&copy; 2026 The Xpression House. All rights reserved.</span>
-        <div style={{ display: 'flex', gap: 'var(--space-md)' }}>
-          <a href="#">Privacy policy</a>
-          <a href="#">Terms</a>
-        </div>
       </div>
     </footer>
   )
