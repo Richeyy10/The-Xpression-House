@@ -11,6 +11,7 @@ import Pastor from '@/components/Pastor'
 import GivingCTA from '@/components/GivingCTA'
 import Visit from '@/components/Visit'
 import Newsletter from '@/components/Newsletter'
+import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
         {/* <HeadChurch /> */}
         <GivingCTA />
         <Visit />
+        <FAQ />
+        
         <Newsletter />
       </main>
       <Footer />

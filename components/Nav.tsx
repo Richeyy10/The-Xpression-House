@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   IconHeart,
   IconBrandInstagram,
@@ -16,7 +18,7 @@ type MenuState = 'closed' | 'open' | 'closing'
 export default function Nav() {
   const [solid, setSolid] = useState(false)
   const [menuState, setMenuState] = useState<MenuState>('closed')
-  const [activeSection, setActiveSection] = useState('')
+  const pathname = usePathname()
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const savedScrollY = useRef(0)
 
@@ -26,21 +28,6 @@ export default function Nav() {
     const onScroll = () => setSolid(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    const sections = ['about', 'events', 'new', 'contact', 'give']
-    const ios = sections.flatMap(id => {
-      const el = document.getElementById(id)
-      if (!el) return []
-      const io = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
-        { threshold: 0.4 }
-      )
-      io.observe(el)
-      return [io]
-    })
-    return () => ios.forEach(io => io.disconnect())
   }, [])
 
   useEffect(() => {
@@ -77,28 +64,31 @@ export default function Nav() {
     menuState === 'closing' ? 'closing' : '',
   ].filter(Boolean).join(' ')
 
+  const isActive = (path: string) =>
+    path === '/' ? pathname === '/' : pathname.startsWith(path)
+
   return (
     <header
       className={`nav${solid ? ' solid' : ''}${isMenuOpen ? ' menu-open' : ''}`}
       id="nav"
       role="banner"
     >
-      <a href="#" className="nav__logo" aria-label="The Xpression House home">
+      <Link href="/" className="nav__logo" aria-label="The Xpression House home">
         <span className="nav__logo-mark">
           <Image src="/xph_logo_png1.png" alt="XPH Logo" fill style={{ objectFit: 'contain' }} />
         </span>
-      </a>
+      </Link>
 
       <nav
         className={navClass}
         aria-label="Primary navigation"
         onClick={(e) => { if (e.target === e.currentTarget) closeMenu() }}
       >
-        <a href="#about" onClick={closeMenu} className={activeSection === 'about' ? 'active' : undefined}>About</a>
-        <a href="#events" onClick={closeMenu} className={activeSection === 'events' ? 'active' : undefined}>Events</a>
-        <a href="#new" onClick={closeMenu} className={activeSection === 'new' ? 'active' : undefined}>I&apos;m New</a>
-        <a href="#contact" onClick={closeMenu} className={activeSection === 'contact' ? 'active' : undefined}>Connect</a>
-        <a href="#give" onClick={closeMenu} className={`nav__give-link${activeSection === 'give' ? ' active' : ''}`}>Give</a>
+        <Link href="/about" onClick={closeMenu} className={isActive('/about') ? 'active' : undefined}>About</Link>
+        <Link href="/events" onClick={closeMenu} className={isActive('/events') ? 'active' : undefined}>Events</Link>
+        <Link href="/new-member" onClick={closeMenu} className={isActive('/new-member') ? 'active' : undefined}>I&apos;m New</Link>
+        <Link href="/connect" onClick={closeMenu} className={isActive('/connect') ? 'active' : undefined}>Connect</Link>
+        <Link href="/give" onClick={closeMenu} className={`nav__give-link${isActive('/give') ? ' active' : ''}`}>Give</Link>
 
         <div className="nav__social">
           <a href="https://www.instagram.com/thexphng" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -123,9 +113,9 @@ export default function Nav() {
       </nav>
 
       <div className="nav__give">
-        <a href="#" className="btn--nav">
+        <Link href="/give" className="btn--nav">
           <IconHeart size={14} aria-hidden /> Give
-        </a>
+        </Link>
         <button
           className={`nav__hamburger${isMenuOpen ? ' open' : ''}`}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

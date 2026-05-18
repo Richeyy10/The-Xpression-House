@@ -47,7 +47,6 @@ function SongCard({ num, cat, title, artist }: Song) {
       onMouseLeave={() => setCardHovered(false)}
     >
       <div className="song-card__top">
-        <div className="song-card__num">{num}</div>
         <div className="song-card__cat">{cat}</div>
       </div>
       <div className="song-card__bottom">

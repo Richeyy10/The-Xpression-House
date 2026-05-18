@@ -1,4 +1,4 @@
-import { IconBuildingChurch, IconUsers, IconWorld } from '@tabler/icons-react'
+import { IconBuildingChurch, IconMapPin, IconCalendar, IconWorld } from '@tabler/icons-react'
 import ArrowLink from './ui/ArrowLink'
 
 export default function HeadChurch() {
@@ -14,30 +14,42 @@ export default function HeadChurch() {
             The Stone <em>Church</em>
           </h2>
           <p className="headchurch__body">
-            The Xpression House is proudly part of The Stone Church family — a growing network of
-            churches committed to raising a generation of Kingdom-minded believers. Rooted in
-            sound doctrine and driven by a mandate to reach the lost, The Stone Church provides
-            the spiritual covering, accountability, and structure that undergirds everything we do
-            at The Xpression House.
+            It all started on <strong>April 23rd, 1993</strong> at the Omega Conference
+            Centre, Favos Building, New Bodija, Ibadan, Oyo State. The inaugural Sunday
+            service followed the very next morning at 8 a.m. at the same venue. What began
+            as a single gathering has since grown into a movement{' '}
+            &#8212; The Stone Church has expanded to more than{' '}
+            <strong>fifty-three (53) locations across four continents</strong>, with its
+            headquarters now permanently established at Mokola, Ibadan.
+          </p>
+          <p className="headchurch__body" style={{ marginBottom: 'var(--space-lg)' }}>
+            Registered as an arm of the{' '}
+            <strong>Word Alive Ministries International</strong>, The Stone Church continues
+            to establish branches all over the country and overseas, providing the spiritual
+            covering and apostolic structure that undergirds everything we do at XPH.
           </p>
           <div className="headchurch__details">
             <div className="headchurch__detail">
-              <IconBuildingChurch size={18} aria-hidden />
-              Established community of faith across multiple locations
+              <IconCalendar size={18} aria-hidden={true} />
+              Founded April 23rd, 1993 &#8212; Ibadan, Oyo State
             </div>
             <div className="headchurch__detail">
-              <IconUsers size={18} aria-hidden />
-              A network committed to discipleship and spiritual growth
+              <IconBuildingChurch size={18} aria-hidden={true} />
+              53+ locations across 4 continents
             </div>
             <div className="headchurch__detail">
-              <IconWorld size={18} aria-hidden />
-              Impacting communities beyond Ibadan
+              <IconMapPin size={18} aria-hidden={true} />
+              Headquarters: Mokola, Ibadan
+            </div>
+            <div className="headchurch__detail">
+              <IconWorld size={18} aria-hidden={true} />
+              An arm of Word Alive Ministries International
             </div>
           </div>
           <ArrowLink>Visit The Stone Church</ArrowLink>
         </div>
         <div className="headchurch__photo" role="img" aria-label="The Stone Church">
-          <IconBuildingChurch size={64} aria-hidden />
+          <IconBuildingChurch size={64} aria-hidden={true} />
         </div>
       </div>
     </section>
