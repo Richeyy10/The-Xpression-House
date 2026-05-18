@@ -5,7 +5,7 @@ import { IconMusic, IconPlayerPlayFilled } from '@tabler/icons-react'
 import { ScrollText } from './ScrollText'
 
 interface Song {
-  num: string
+  num?: string
   cat: string
   title: string
   artist: string
@@ -21,7 +21,7 @@ const SONGS: Song[] = [
   { num: '07', cat: 'Worship', title: 'Victory Is Yours',      artist: 'Bethel Music' },
 ]
 
-function SongCard({ num, cat, title, artist }: Song) {
+function SongCard({ cat, title, artist }: Song) {
   const [cardHovered, setCardHovered] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
 
