@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { IconPlus } from '@tabler/icons-react'
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll'
 
 interface FAQItem { q: string; a: string }
 
@@ -34,10 +35,11 @@ const faqs: FAQItem[] = [
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null)
+  const ref = useRevealOnScroll()
 
   return (
     <section className="faq-section" aria-labelledby="faq-section-heading">
-      <div className="faq-section__inner">
+      <div ref={ref} className="faq-section__inner void-card">
         <p className="faq-section__overline">
           <span className="faq-section__overline-line" aria-hidden={true} />
           Questions

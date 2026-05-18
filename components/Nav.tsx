@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -14,6 +14,27 @@ import {
 } from '@tabler/icons-react'
 
 type MenuState = 'closed' | 'open' | 'closing'
+
+function lockScroll(savedY: { current: number }) {
+  savedY.current = window.scrollY
+  document.body.style.cssText += ';position:fixed;top:-' + savedY.current + 'px;left:0;right:0;'
+}
+
+function unlockScroll(savedY: { current: number }) {
+  document.body.style.position = ''
+  document.body.style.top = ''
+  document.body.style.left = ''
+  document.body.style.right = ''
+  // Restore position without triggering smooth-scroll
+  document.documentElement.style.scrollBehavior = 'auto'
+  window.scrollTo(0, savedY.current)
+  // Use two rAFs so the browser has fully committed the position before re-enabling smooth-scroll
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.documentElement.style.scrollBehavior = ''
+    })
+  })
+}
 
 export default function Nav() {
   const [solid, setSolid] = useState(false)
@@ -30,17 +51,16 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      savedScrollY.current = window.scrollY
-      document.body.style.position = 'fixed'
-      document.body.style.top = `-${savedScrollY.current}px`
-      document.body.style.width = '100%'
-    } else {
+  // Only handles locking on open. Unlock is handled imperatively in closeMenu
+  // so it completes before React re-renders (avoiding the viewport-to-0 flash).
+  useLayoutEffect(() => {
+    if (isMenuOpen) lockScroll(savedScrollY)
+    return () => {
+      // Safety net: always clean up body styles on unmount
       document.body.style.position = ''
       document.body.style.top = ''
-      document.body.style.width = ''
-      window.scrollTo(0, savedScrollY.current)
+      document.body.style.left = ''
+      document.body.style.right = ''
     }
   }, [isMenuOpen])
 
@@ -50,7 +70,12 @@ export default function Nav() {
     if (menuState === 'closed') return
     if (closeTimer.current) clearTimeout(closeTimer.current)
     setMenuState('closing')
-    closeTimer.current = setTimeout(() => setMenuState('closed'), 460)
+    closeTimer.current = setTimeout(() => {
+      // Unlock scroll BEFORE setting state so the position restores
+      // in the same task as the body un-fix, before any React paint.
+      unlockScroll(savedScrollY)
+      setMenuState('closed')
+    }, 460)
   }
 
   const handleToggle = () => {

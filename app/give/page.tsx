@@ -204,16 +204,18 @@ function CryptoSection() {
   )
 }
 
-function GiveScripture() {
+function GiveConfession() {
   const ref = useRevealOnScroll()
   return (
-    <section className="give-scripture" aria-label="Scripture">
+    <section className="give-scripture" aria-label="Giving confession">
       <div ref={ref} className="give-scripture__inner void-card">
         <p className="give-scripture__text">
-          &#8220;Each of you should give what you have decided in your heart to give,
-          not reluctantly or under compulsion, for God loves a cheerful giver.&#8221;
+          I am a cheerful, generous giver. I release my resources freely into the Kingdom,
+          knowing that God is my source and His supply has no limit. Every seed I sow returns
+          to me multiplied &#8212; pressed down, shaken together, running over. I give not
+          from obligation, but from a heart overflowing with faith and gratitude.
         </p>
-        <p className="give-scripture__ref">2 Corinthians 9 : 7</p>
+        <p className="give-scripture__ref">My giving confession</p>
       </div>
     </section>
   )
@@ -227,9 +229,8 @@ export default function GivePage() {
         <GiveHero />
         <BankSection />
         <CryptoSection />
-        <GiveScripture />
+        <GiveConfession />
         <FAQ />
-        
         <Newsletter />
       </main>
       <Footer />

@@ -1,10 +1,15 @@
+'use client'
+
 import Image from 'next/image'
 import ArrowLink from './ui/ArrowLink'
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll'
 
 export default function Pastor() {
+  const ref = useRevealOnScroll()
+
   return (
     <section className="pastor" id="pastor" aria-labelledby="pastor-heading">
-      <div className="pastor__inner">
+      <div ref={ref} className="pastor__inner void-card">
         <div className="pastor__photo">
           <Image
             src="/PFE.jpg"
@@ -30,7 +35,7 @@ export default function Pastor() {
           </p>
           <p className="pastor__bio">
             His teaching style blends deep scriptural insight with practical, relatable
-            application — meeting people exactly where they are. Under his leadership, The
+            application &#8212; meeting people exactly where they are. Under his leadership, The
             Xpression House has grown from a small gathering into a vibrant community of
             believers impacting Ibadan and beyond.
           </p>

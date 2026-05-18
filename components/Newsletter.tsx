@@ -1,15 +1,18 @@
 'use client'
 
 import { FormEvent } from 'react'
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll'
 
 export default function Newsletter() {
+  const ref = useRevealOnScroll()
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
   }
 
   return (
     <section className="newsletter" aria-labelledby="nl-heading">
-      <div className="newsletter__inner">
+      <div ref={ref} className="newsletter__inner void-card">
         <h3 id="nl-heading" className="newsletter__heading">
           Stay in the <em>know</em>
         </h3>

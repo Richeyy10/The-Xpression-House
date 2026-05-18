@@ -54,6 +54,9 @@ export default function Sermon() {
               for building a faith that stands firm when circumstances challenge everything you
               believe.
             </p>
+            <a href="#" className="sermon__top-link link--arrow">
+              View sermon archives <IconArrowRight size={14} aria-hidden />
+            </a>
           </div>
 
           <div className="sermon__sidebar">
@@ -72,10 +75,6 @@ export default function Sermon() {
             </div>
           </div>
         </div>
-
-        <a href="#" className="sermon__top-link link--arrow">
-          View sermon archives <IconArrowRight size={14} aria-hidden />
-        </a>
       </div>
     </section>
   )

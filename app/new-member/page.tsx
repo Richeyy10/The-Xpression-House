@@ -88,9 +88,10 @@ function NmHero() {
 }
 
 function NmInfo() {
+  const ref = useRevealOnScroll()
   return (
     <section className="nm-info" aria-label="Service information">
-      <div className="nm-info__inner">
+      <div ref={ref} className="nm-info__inner void-card">
         <div className="nm-info__item">
           <span className="nm-info__overline">Service Time</span>
           <span className="nm-info__value">Sundays at 8 AM</span>
@@ -133,7 +134,7 @@ function NmSteps() {
       <div ref={ref} className="nm-steps__grid">
         {steps.map(({ num, Icon: StepIcon, title, body }) => (
           <article key={num} className="nm-step void-card">
-            <StepIcon size={110} className="nm-step__bg-icon" aria-hidden={true} />
+            <StepIcon size={140} className="nm-step__bg-icon" aria-hidden={true} />
             <div className="nm-step__icon">
               <StepIcon size={20} aria-hidden={true} />
             </div>
@@ -172,11 +173,12 @@ function FirstTimerForm() {
             <div className="form-success__check">
               <IconCheck size={32} aria-hidden={true} />
             </div>
-            <p className="form-success__title">We&#8217;ll see you Sunday</p>
+            <p className="form-success__title">We&#8217;re so glad you reached out</p>
             <p className="form-success__body">
-              Thanks for letting us know you&#8217;re coming. Our welcome team will be
-              looking out for you. Feel free to reach out on the Connect page if you have
-              any questions before then.
+              Someone from our team will be in touch soon. Whether you&#8217;re planning
+              your first visit or just exploring &#8212; we&#8217;re already looking forward
+              to meeting you. Check out the Connect page if you have any questions in the
+              meantime.
             </p>
           </div>
         ) : (
@@ -184,14 +186,15 @@ function FirstTimerForm() {
             <div className="nm-first-timer__header">
               <p className="nm-first-timer__overline">
                 <span className="nm-first-timer__overline-line" aria-hidden={true} />
-                First-Timer
+                Say Hello
               </p>
               <h2 id="first-timer-heading" className="nm-first-timer__title">
-                Let us know you&#8217;re <em>coming</em>
+                Let&#8217;s get you <em>connected</em>
               </h2>
               <p className="nm-first-timer__desc">
-                Fill this in before your first visit and our welcome team will make sure
-                you feel right at home from the moment you walk in.
+                Whether you&#8217;re curious about XPH, planning your first visit, or
+                just walked in for the first time &#8212; share a few details and our
+                team will personally reach out to welcome you.
               </p>
             </div>
 
@@ -225,16 +228,16 @@ function FirstTimerForm() {
 
               <div className="form-field">
                 <label htmlFor="ft-note">
-                  Anything you&#8217;d like us to know? <span className="form-field__optional">(optional)</span>
+                  What&#8217;s on your mind? <span className="form-field__optional">(optional)</span>
                 </label>
                 <textarea id="ft-note" name="note" rows={4}
-                  placeholder="Prayer requests, questions, accessibility needs&#8230;"
+                  placeholder="Questions about XPH, prayer requests, what you&#8217;re looking for in a church, accessibility needs &#8212; anything at all."
                   value={data.note} onChange={onChange} />
               </div>
 
               <div className="form-actions">
                 <button type="submit" className="btn--primary" disabled={formState === 'submitting'}>
-                  {formState === 'submitting' ? 'Sending&#8230;' : 'Plan My Visit'}
+                  {formState === 'submitting' ? 'Sending&#8230;' : 'Send My Details'}
                 </button>
               </div>
             </form>

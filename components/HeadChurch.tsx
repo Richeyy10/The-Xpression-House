@@ -1,10 +1,15 @@
+'use client'
+
 import { IconBuildingChurch, IconMapPin, IconCalendar, IconWorld } from '@tabler/icons-react'
 import ArrowLink from './ui/ArrowLink'
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll'
 
 export default function HeadChurch() {
+  const ref = useRevealOnScroll()
+
   return (
     <section className="headchurch" aria-labelledby="headchurch-heading">
-      <div className="headchurch__inner">
+      <div ref={ref} className="headchurch__inner void-card">
         <div>
           <div className="headchurch__overline">
             <span className="headchurch__overline-line" aria-hidden="true" />
