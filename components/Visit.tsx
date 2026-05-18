@@ -1,5 +1,5 @@
-import { IconMapPin, IconClock, IconNavigation, IconDeviceMobile, IconBrandYoutube, IconBrandFacebook } from '@tabler/icons-react'
-import Button from './ui/Button'
+import { IconMapPin, IconClock, IconDeviceMobile, IconBrandYoutube, IconBrandFacebook } from '@tabler/icons-react'
+// import Button from './ui/Button'
 
 export default function Visit() {
   return (
@@ -55,12 +55,12 @@ export default function Visit() {
             </div>
           </div>
 
-          <Button
+          {/* <Button
             icon={<IconNavigation size={16} aria-hidden />}
             style={{ marginTop: 'var(--space-sm)' }}
           >
             Get directions
-          </Button>
+          </Button> */}
         </div>
 
         <div className="visit__map">

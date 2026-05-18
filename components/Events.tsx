@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { IconCalendar, IconClock, IconArrowUpRight } from '@tabler/icons-react'
+import { IconCalendar, IconClock } from '@tabler/icons-react'
 import Button from './ui/Button'
 
 const STRIP  = 12
@@ -92,9 +92,6 @@ function EventCard({ num, bgClass, title, desc, date, time, active, emerged, ani
           <span><IconCalendar size={14} aria-hidden /> {date}</span>
           <span><IconClock size={14} aria-hidden /> {time}</span>
         </div>
-        <div className="events__card-arrow" aria-hidden="true">
-          <IconArrowUpRight size={16} />
-        </div>
       </div>
     </article>
   )
@@ -183,7 +180,7 @@ export default function Events() {
           ))}
         </div>
         <div className="events__footer">
-          <Button href="#" variant="secondary" icon={<IconCalendar size={16} aria-hidden />} style={{ marginTop: 'var(--space-lg)' }}>
+          <Button href="/events" variant="secondary" icon={<IconCalendar size={16} aria-hidden />} style={{ marginTop: 'var(--space-lg)' }}>
             View all events
           </Button>
         </div>

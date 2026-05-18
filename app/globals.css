@@ -276,9 +276,9 @@ header.nav.menu-open {
   display: inline-flex; align-items: center; gap: var(--space-xs);
   font-size: 13px; font-weight: 600; text-transform: uppercase;
   letter-spacing: .08em; color: var(--bright-green); text-decoration: none;
-  transition: gap .3s ease-out;
 }
-.link--arrow:hover { gap: 14px; }
+.link--arrow svg { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+.link--arrow:hover svg { transform: translateX(5px); }
 .about__video {
   width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-video); overflow: hidden;
   background: var(--deep-green); position: relative;
@@ -608,7 +608,7 @@ header.nav.menu-open {
   background: rgba(10,31,20,.4); pointer-events: none;
 }
 .sermon__top-link {
-  display: inline-flex; margin-top: var(--space-md);
+  display: inline-flex; margin-top: var(--space-md); pointer-events: auto;
 }
 .sermon__play {
   position: relative; z-index: 5; cursor: pointer;

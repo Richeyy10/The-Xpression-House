@@ -16,7 +16,7 @@ export default function Sermon() {
   const [seriesHovered, setSeriesHovered] = useState(false)
 
   return (
-    <section className="sermon" aria-labelledby="sermon-heading">
+    <section className="sermon" id="sermon" aria-labelledby="sermon-heading">
       <div className="sermon__card void-card" ref={cardRef}>
         <div className="sermon__video">
           <div className="sermon__video-overlay" />

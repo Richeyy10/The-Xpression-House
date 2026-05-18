@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   IconBrandInstagram,
   IconBrandFacebook,
@@ -37,26 +38,26 @@ export default function Footer() {
 
         <nav className="footer__col" aria-label="Explore">
           <h4>Explore</h4>
-          <a href="#">About us</a>
-          <a href="#">Our leadership</a>
-          <a href="#">Beliefs</a>
-          <a href="#">Sermons</a>
+          <Link href="/about">About us</Link>
+          <Link href="/#pastor">Our leadership</Link>
+          <Link href="/about#belief-heading">Beliefs</Link>
+          <Link href="/#sermon">Sermons</Link>
         </nav>
 
         <nav className="footer__col" aria-label="Connect">
           <h4>Connect</h4>
-          <a href="#">Events</a>
-          <a href="#">Small groups</a>
-          <a href="#">Volunteer</a>
-          <a href="#">Prayer requests</a>
+          <Link href="/events">Events</Link>
+          <Link href="/connect">Small groups</Link>
+          <Link href="/connect">Volunteer</Link>
+          <Link href="/connect">Prayer requests</Link>
         </nav>
 
         <nav className="footer__col" aria-label="Resources">
           <h4>Resources</h4>
-          <a href="#">Give online</a>
-          <a href="#">Sunday setlist</a>
-          <a href="#">Zoomers Bible</a>
-          <a href="#">Contact us</a>
+          <Link href="/give">Give online</Link>
+          <Link href="/#setlist">Sunday setlist</Link>
+          <Link href="/new-member">I&apos;m new here</Link>
+          <Link href="/connect">Contact us</Link>
         </nav>
       </div>
 
