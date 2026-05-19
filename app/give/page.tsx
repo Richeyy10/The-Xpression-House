@@ -113,16 +113,22 @@ function CopyButton({ text }: { text: string }) {
 function GiveHero() {
   const ref = useRevealOnScroll()
   return (
-    <section className="inner-hero" aria-labelledby="give-heading">
+    <section
+      className="pt-[calc(var(--nav-height)+var(--space-3xl))] px-12 pb-16 max-w-[1200px] mx-auto lt-lg:px-8 lt-sm:px-3"
+      aria-labelledby="give-heading"
+    >
       <div ref={ref} className="void-card">
-        <p className="inner-hero__overline">
-          <span className="inner-hero__overline-line" aria-hidden={true} />
+        <p className="flex items-center gap-[10px] font-headline text-[11px] font-bold uppercase tracking-[.15em] text-bright-green mb-6">
+          <span className="w-8 h-[1.5px] bg-bright-green inline-block" aria-hidden={true} />
           Generosity
         </p>
-        <h1 id="give-heading" className="inner-hero__heading">
-          Give and it shall be <em>given</em>
+        <h1
+          id="give-heading"
+          className="font-quote text-[clamp(52px,8vw,96px)] font-light leading-[1.05] tracking-[-0.02em] text-cream mb-6 lt-sm:text-[36px]"
+        >
+          Give and it shall be <em className="italic text-bright-green font-normal">given</em>
         </h1>
-        <p className="inner-hero__sub">
+        <p className="text-[17px] text-[rgba(240,237,230,0.5)] max-w-[560px] leading-[1.8]">
           Every gift sown into XPH funds worship nights, outreach, discipleship, and keeps
           our doors open for anyone who walks in. Thank you for partnering with us.
         </p>
@@ -134,30 +140,28 @@ function GiveHero() {
 function BankSection() {
   const ref = useRevealManyOnScroll('.give-tile--bank')
   return (
-    <section className="give-section" aria-labelledby="bank-heading">
-      <p className="give-section__overline">
-        <span className="give-section__overline-line" aria-hidden={true} />
+    <section className="max-w-[1200px] mx-auto px-12 pb-20 lt-lg:px-8 lt-sm:px-3" aria-labelledby="bank-heading">
+      <p className="flex items-center gap-[10px] font-headline text-[11px] font-bold uppercase tracking-[.15em] text-[rgba(240,237,230,0.35)] mb-6 pt-16 border-t border-[rgba(240,237,230,0.07)]">
+        <span className="w-8 h-px bg-[rgba(240,237,230,0.2)] inline-block" aria-hidden={true} />
         Bank Transfer
       </p>
-      <h2 id="bank-heading" className="give-section__title">Nigerian &amp; foreign accounts</h2>
-      <div ref={ref} className="give-tiles">
+      <h2 id="bank-heading" className="font-quote text-[32px] font-light text-cream mb-12 tracking-[-0.01em] lt-lg:text-[26px] lt-sm:text-[22px]">
+        Nigerian &amp; foreign accounts
+      </h2>
+      <div ref={ref} className="grid grid-cols-3 gap-6 -mx-20 lt-lg:grid-cols-3 lt-lg:-mx-10 lt-md:grid-cols-2 lt-md:mx-0 lt-sm:grid-cols-1">
         {bankAccounts.map(({ id, currency, bank, accountName, accountNumber, BgIcon }) => (
           <div key={id} className="give-tile give-tile--bank void-card">
-            <BgIcon
-              size={150}
-              className="give-tile__bg-icon"
-              aria-hidden={true}
-            />
+            <BgIcon size={150} className="give-tile__bg-icon" aria-hidden={true} />
             <span
-              className="give-tile__currency"
+              className="font-headline text-[10px] font-bold tracking-[.16em] uppercase text-bright-green"
               dangerouslySetInnerHTML={{ __html: currency }}
             />
-            <span className="give-tile__bank">{bank}</span>
-            <span className="give-tile__name">{accountName}</span>
+            <span className="text-[13px] text-[rgba(240,237,230,0.4)] mt-0.5">{bank}</span>
+            <span className="font-quote text-[22px] font-normal text-cream leading-[1.2]">{accountName}</span>
             <span className="give-tile__number">{accountNumber}</span>
-            <hr className="give-tile__divider" />
-            <div className="give-tile__footer">
-              <span className="give-tile__label">Account No.</span>
+            <hr className="border-none border-t border-[rgba(240,237,230,0.07)] my-1" />
+            <div className="flex items-center justify-between">
+              <span className="font-headline text-[10px] tracking-[.06em] text-[rgba(240,237,230,0.35)]">Account No.</span>
               <CopyButton text={accountNumber} />
             </div>
           </div>
@@ -170,31 +174,29 @@ function BankSection() {
 function CryptoSection() {
   const ref = useRevealManyOnScroll('.give-tile--crypto')
   return (
-    <section className="give-section" aria-labelledby="crypto-heading">
-      <p className="give-section__overline">
-        <span className="give-section__overline-line" aria-hidden={true} />
+    <section className="max-w-[1200px] mx-auto px-12 pb-20 lt-lg:px-8 lt-sm:px-3" aria-labelledby="crypto-heading">
+      <p className="flex items-center gap-[10px] font-headline text-[11px] font-bold uppercase tracking-[.15em] text-[rgba(240,237,230,0.35)] mb-6 pt-16 border-t border-[rgba(240,237,230,0.07)]">
+        <span className="w-8 h-px bg-[rgba(240,237,230,0.2)] inline-block" aria-hidden={true} />
         Digital Currency
       </p>
-      <h2 id="crypto-heading" className="give-section__title">Cryptocurrency wallets</h2>
-      <div ref={ref} className="give-tiles">
+      <h2 id="crypto-heading" className="font-quote text-[32px] font-light text-cream mb-12 tracking-[-0.01em] lt-lg:text-[26px] lt-sm:text-[22px]">
+        Cryptocurrency wallets
+      </h2>
+      <div ref={ref} className="grid grid-cols-3 gap-6 -mx-20 lt-lg:grid-cols-3 lt-lg:-mx-10 lt-md:grid-cols-2 lt-md:mx-0 lt-sm:grid-cols-1">
         {cryptoAccounts.map(({ id, currency, network, address, BgIcon }) => (
           <div key={id} className="give-tile give-tile--crypto void-card">
-            <BgIcon
-              size={150}
-              className="give-tile__bg-icon"
-              aria-hidden={true}
-            />
-            <span className="give-tile__currency">{currency}</span>
+            <BgIcon size={150} className="give-tile__bg-icon" aria-hidden={true} />
+            <span className="font-headline text-[10px] font-bold tracking-[.16em] uppercase text-bright-green">{currency}</span>
             <span
-              className="give-tile__bank"
+              className="text-[13px] text-[rgba(240,237,230,0.4)] mt-0.5"
               dangerouslySetInnerHTML={{ __html: network }}
             />
-            <p className="give-tile__addr">
+            <p className="text-[15px] text-[rgba(240,237,230,0.8)] leading-[1.5] font-mono font-bold whitespace-nowrap overflow-hidden text-ellipsis">
               {address.length > 30 ? `${address.slice(0, 30)}…` : address}
             </p>
-            <hr className="give-tile__divider" />
-            <div className="give-tile__footer">
-              <span className="give-tile__label">Wallet Address</span>
+            <hr className="border-none border-t border-[rgba(240,237,230,0.07)] my-1" />
+            <div className="flex items-center justify-between">
+              <span className="font-headline text-[10px] tracking-[.06em] text-[rgba(240,237,230,0.35)]">Wallet Address</span>
               <CopyButton text={address} />
             </div>
           </div>
@@ -207,15 +209,17 @@ function CryptoSection() {
 function GiveConfession() {
   const ref = useRevealOnScroll()
   return (
-    <section className="give-scripture" aria-label="Giving confession">
-      <div ref={ref} className="give-scripture__inner void-card">
-        <p className="give-scripture__text">
+    <section className="max-w-[1200px] mx-auto px-12 pb-40 lt-sm:px-3" aria-label="Giving confession">
+      <div ref={ref} className="py-16 px-12 text-center void-card lt-sm:py-8 lt-sm:px-6">
+        <p className="font-quote text-[clamp(20px,3vw,30px)] font-light italic leading-[1.5] text-cream mb-6 relative lt-sm:text-[clamp(16px,5vw,22px)]">
           I am a cheerful, generous giver. I release my resources freely into the Kingdom,
           knowing that God is my source and His supply has no limit. Every seed I sow returns
           to me multiplied &#8212; pressed down, shaken together, running over. I give not
           from obligation, but from a heart overflowing with faith and gratitude.
         </p>
-        <p className="give-scripture__ref">My giving confession</p>
+        <p className="font-headline text-[11px] font-bold tracking-[.15em] uppercase text-bright-green">
+          My giving confession
+        </p>
       </div>
     </section>
   )

@@ -24,6 +24,12 @@ const config: Config = {
         body: ['var(--font-body)', 'sans-serif'],
         quote: ['var(--font-quote)', 'Georgia', 'serif'],
       },
+      screens: {
+        // Max-width (desktop-first) breakpoints matching existing CSS
+        'lt-lg': { max: '1023px' }, // tablet and below
+        'lt-md': { max: '767px' },  // mobile and below
+        'lt-sm': { max: '639px' },  // small mobile and below
+      },
     },
   },
   plugins: [],
