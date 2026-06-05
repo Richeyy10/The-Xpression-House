@@ -491,13 +491,38 @@ header.nav.menu-open {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .events__grid {
-    height: 560px;
-    max-width: 320px;
-    margin-inline: auto;
+  .events__card-content {
+    position: absolute;
+    bottom: 0;
+    top: auto;          /* override any top positioning */
+    padding: 20px 16px 24px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.75) 25%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
   }
 
-  .events__card { width: 100%; }
+  .events__card-num {
+    color: var(--bright-green);
+  }
+
+  .events__card-title {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .events__card-desc {
+    opacity: 1;
+    max-height: 80px;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.85);   /* brighter than default */
+  }
+
+  .events__card-meta {
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 .events__footer { margin-top: var(--space-xl); display: flex; justify-content: center; }
 
