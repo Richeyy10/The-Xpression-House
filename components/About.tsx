@@ -1,7 +1,25 @@
-import { IconPlayerPlay } from '@tabler/icons-react'
+"use client";
+import { useRef, useState } from 'react'
+import { IconPlayerPlay, IconPlayerPause } from '@tabler/icons-react'
 import ArrowLink from './ui/ArrowLink'
 
 export default function About() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const togglePlay = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (isPlaying) {
+      video.pause()
+      setIsPlaying(false)
+    } else {
+      video.play()
+      setIsPlaying(true)
+    }
+  }
+
   return (
     <section className="about" id="about" aria-labelledby="about-heading">
       <div className="about__inner">
@@ -24,13 +42,25 @@ export default function About() {
             <ArrowLink>Discover our community</ArrowLink>
           </div>
         </div>
-        <div
-          className="about__video"
-          role="img"
-          aria-label="Video preview of Sunday worship service"
-        >
-          <button className="play-btn" aria-label="Play worship service video">
-            <IconPlayerPlay size={24} aria-hidden />
+
+        <div className="about__video">
+          <video
+            ref={videoRef}
+            src="/videos/worship-service.mp4"   
+            poster="/background.jpg" 
+            preload="none"
+            playsInline
+            onEnded={() => setIsPlaying(false)}
+          />
+          <button
+            className={`play-btn ${isPlaying ? 'play-btn--playing' : ''}`}
+            onClick={togglePlay}
+            aria-label={isPlaying ? 'Pause worship service video' : 'Play worship service video'}
+          >
+            {isPlaying
+              ? <IconPlayerPause size={24} aria-hidden />
+              : <IconPlayerPlay size={24} aria-hidden />
+            }
           </button>
         </div>
       </div>

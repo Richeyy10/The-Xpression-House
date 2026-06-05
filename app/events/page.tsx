@@ -108,16 +108,22 @@ function FeaturedEvent() {
         ref={ref}
         className="grid grid-cols-[1fr_1.1fr] border border-[rgba(240,237,230,0.07)] rounded-[8px] overflow-hidden bg-forest-green min-h-[440px] relative void-card lt-lg:grid-cols-1 lt-lg:min-h-0"
       >
-        {/* Image panel — keeps CSS class for complex gradient + responsive overlay */}
-        <div className="ev-featured__image" aria-hidden={true}>
+        <div className="ev-featured__image relative" aria-hidden={true}>
+          <video
+            src="/videos/ablaze.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
           <div className="ev-featured__image-glow" />
-          <div className="ev-featured__image-overlay" />
+          <div className="" />
           <span className="absolute top-6 left-6 bg-bright-green text-deep-green font-headline text-[10px] font-bold tracking-[.14em] uppercase py-[5px] px-3 rounded-full">
             Featured
           </span>
         </div>
-
-        {/* Body */}
         <div className="py-16 px-12 flex flex-col justify-center">
           <p className="font-headline text-[11px] font-bold tracking-[.14em] uppercase text-teal mb-4">
             Annual Event &#8212; Ibadan
@@ -126,12 +132,12 @@ function FeaturedEvent() {
             id="featured-heading"
             className="font-quote text-[clamp(28px,3.5vw,44px)] font-normal leading-[1.15] tracking-[-0.01em] text-cream mb-8"
           >
-            XPH Annual Conference <em className="italic text-bright-green">2025</em>
+            XPH Annual Conference <em className="italic text-bright-green">2026</em>
           </h2>
           <div className="flex flex-col gap-[10px] mb-8">
             <div className="flex items-center gap-[10px] text-[14px] text-[rgba(240,237,230,0.5)]">
               <IconCalendar size={15} aria-hidden={true} className="text-bright-green flex-shrink-0" />
-              Friday &#8212; Sunday, July 18&#8211;20, 2025
+              Friday &#8212; Sunday, October 18&#8211;20, 2026
             </div>
             <div className="flex items-center gap-[10px] text-[14px] text-[rgba(240,237,230,0.5)]">
               <IconClock size={15} aria-hidden={true} className="text-bright-green flex-shrink-0" />

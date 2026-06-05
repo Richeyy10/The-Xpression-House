@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { IconCalendar, IconClock } from '@tabler/icons-react'
 import Button from './ui/Button'
 
-const STRIP  = 12
-const PEEK   = 12
+const STRIP  = 16
+const PEEK   = 16
 const PEEK_M = 64
 
 function getCardStyle(cardIdx: number, activeIdx: number, total: number): React.CSSProperties {
@@ -49,6 +49,7 @@ function getCardStyle(cardIdx: number, activeIdx: number, total: number): React.
 interface EventCardProps {
   num: string
   bgClass: string
+  bgImage?: string
   title: string
   desc: string
   date: string
@@ -61,7 +62,10 @@ interface EventCardProps {
   onSwipeDown: () => void
 }
 
-function EventCard({ num, bgClass, title, desc, date, time, active, emerged, animDelay, cardStyle, onActivate, onSwipeDown }: EventCardProps) {
+function EventCard({
+  num, bgClass, bgImage, title, desc, date, time,
+  active, emerged, animDelay, cardStyle, onActivate, onSwipeDown
+}: EventCardProps) {
   const touchY = useRef(0)
 
   return (
@@ -82,7 +86,14 @@ function EventCard({ num, bgClass, title, desc, date, time, active, emerged, ani
         }
       }}
     >
-      <div className={`events__card-bg ${bgClass}`} />
+      <div
+        className={`events__card-bg ${bgImage ? '' : bgClass}`}
+        style={bgImage ? {
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+        } : undefined}
+      />
       <div className="events__card-overlay" />
       <div className="events__card-content">
         <div className="events__card-num">{num}</div>
@@ -101,6 +112,7 @@ const EVENTS = [
   {
     num: 'Sunday',
     bgClass: 'events__card-bg--1',
+    bgImage: '/communion-sunday.jpg',
     title: 'Faith series: Walking by faith',
     desc: 'Continue the journey through our current series on building unshakeable faith with Pastor Fred Elegbe.',
     date: '18 May 2026',
@@ -109,6 +121,7 @@ const EVENTS = [
   {
     num: 'Wednesday',
     bgClass: 'events__card-bg--2',
+    bgImage: '/bible-study.jpg',
     title: 'Midweek bible study',
     desc: 'Dive deeper into scripture with interactive group discussion and practical application.',
     date: '21 May',
@@ -117,7 +130,8 @@ const EVENTS = [
   {
     num: 'Saturday',
     bgClass: 'events__card-bg--3',
-    title: 'Youth hangout & fellowship',
+    bgImage: '/thanksgiving.jpg',
+    title: 'Thanksgiving sunday',
     desc: "Games, food, music, and real conversations. Bring a friend — everyone's welcome.",
     date: '24 May',
     time: '4:00 PM',
@@ -180,7 +194,12 @@ export default function Events() {
           ))}
         </div>
         <div className="events__footer">
-          <Button href="/events" variant="secondary" icon={<IconCalendar size={16} aria-hidden />} style={{ marginTop: 'var(--space-lg)' }}>
+          <Button
+            href="/events"
+            variant="secondary"
+            icon={<IconCalendar size={16} aria-hidden />}
+            style={{ marginTop: 'var(--space-lg)' }}
+          >
             View all events
           </Button>
         </div>

@@ -55,7 +55,7 @@ function PageHero() {
       <div className="page-hero__image-wrap">
         <div className="page-hero__image-inner" ref={imageInnerRef}>
           <Image
-            src="/welcome-team.jpg"
+            src="/about.jpg"
             alt="The XPH community gathered together"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -82,7 +82,7 @@ function BeliefSection() {
         <div ref={ref} className="about-belief__right void-card">
           <div className="about-belief__image">
             <Image
-              src="/welcome-team.jpg"
+              src="/worship.jpg"
               alt="XPH community in worship"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
