@@ -69,8 +69,8 @@ export default function Footer() {
           </h4>
           <Link href="/about" className={navLinkClass}>About us</Link>
           <Link href="/#pastor" className={navLinkClass}>Our leadership</Link>
-          <Link href="/about#belief-heading" className={navLinkClass}>Beliefs</Link>
           <Link href="/#sermon" className={navLinkClass}>Sermons</Link>
+          <Link href="/testimonies" className={navLinkClass}>Testimonies</Link>
         </nav>
 
         {/* Connect */}

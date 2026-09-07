@@ -111,7 +111,10 @@ export default function Nav() {
       >
         <Link href="/about" onClick={closeMenu} className={isActive('/about') ? 'active' : undefined}>About</Link>
         <Link href="/events" onClick={closeMenu} className={isActive('/events') ? 'active' : undefined}>Events</Link>
+        <Link href="/ablaze" onClick={closeMenu} className={isActive('/ablaze') ? 'active' : undefined}>Ablaze</Link>
+        <Link href="/ministries" onClick={closeMenu} className={isActive('/ministries') ? 'active' : undefined}>Ministries</Link>
         <Link href="/new-member" onClick={closeMenu} className={isActive('/new-member') ? 'active' : undefined}>I&apos;m New</Link>
+        <Link href="/blog" onClick={closeMenu} className={isActive('/blog') ? 'active' : undefined}>Blog</Link>
         <Link href="/connect" onClick={closeMenu} className={isActive('/connect') ? 'active' : undefined}>Connect</Link>
         <Link href="/give" onClick={closeMenu} className={`nav__give-link${isActive('/give') ? ' active' : ''}`}>Give</Link>
 
