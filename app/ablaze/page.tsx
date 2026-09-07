@@ -2,7 +2,6 @@
 
 import {
   IconFlame,
-  IconCalendar,
   IconMapPin,
   IconClock,
   IconQuote,
@@ -99,12 +98,12 @@ interface GalleryImage {
 
 // TODO: replace with real photos from the last edition, dropped into /public/images/ablaze/
 const galleryImages: GalleryImage[] = [
-  { id: 'g1', src: '/ablaze/anjola.jpg', alt: 'Worship session at the last Ablaze edition' },
-  { id: 'g2', src: '/ablaze/people.jpg', alt: 'Crowd gathered during Ablaze Night of Prayer' },
-  { id: 'g3', src: '/ablaze/shade.jpg', alt: 'Altar call moment at Ablaze' },
-  { id: 'g4', src: '/ablaze/gethsy.jpg', alt: 'Ministration time on the Ablaze stage' },
-  { id: 'g5', src: '/ablaze/ewa.jpg', alt: 'Young people in prayer at Ablaze' },
-  { id: 'g6', src: '/ablaze/anjola.jpg', alt: 'Closing moments of the last Ablaze edition' },
+  { id: 'g1', src: '/images/ablaze/gallery-1.jpg', alt: 'Worship session at the last Ablaze edition' },
+  { id: 'g2', src: '/images/ablaze/gallery-2.jpg', alt: 'Crowd gathered during Ablaze Night of Prayer' },
+  { id: 'g3', src: '/images/ablaze/gallery-3.jpg', alt: 'Altar call moment at Ablaze' },
+  { id: 'g4', src: '/images/ablaze/gallery-4.jpg', alt: 'Ministration time on the Ablaze stage' },
+  { id: 'g5', src: '/images/ablaze/gallery-5.jpg', alt: 'Young people in prayer at Ablaze' },
+  { id: 'g6', src: '/images/ablaze/gallery-6.jpg', alt: 'Closing moments of the last Ablaze edition' },
 ]
 
 interface Testimony {
@@ -120,28 +119,28 @@ const testimonies: Testimony[] = [
     id: 't1',
     quote:
       'I walked in exhausted and walked out changed. The altar time alone was worth staying up for &#8212; I heard from God in a way I hadn&#8217;t in months.',
-    name: 'Bukola Oladipo',
+    name: 'Name Surname',
     role: 'Attended last edition',
   },
   {
     id: 't2',
     quote:
       'It wasn&#8217;t a performance, it was genuine. The worship felt like it went on forever in the best way, and I left with actual clarity, not just a good feeling.',
-    name: 'Busola Animashaun',
+    name: 'Name Surname',
     role: 'Attended last edition',
   },
   {
     id: 't3',
     quote:
       'I came with a friend not really expecting much. The teaching was so direct and practical that I&#8217;m still applying it months later.',
-    name: 'Segun Tunde',
+    name: 'Name Surname',
     role: 'Attended last edition',
   },
   {
     id: 't4',
     quote:
       'Ablaze is where I found my community at XPH. I met people that night I&#8217;m still doing life with.',
-    name: 'Ojie Osehojie',
+    name: 'Name Surname',
     role: 'Attended last edition',
   },
 ]
