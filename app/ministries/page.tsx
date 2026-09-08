@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import {
   IconMusic,
   IconVideo,
@@ -22,6 +23,8 @@ interface Ministry {
   tag: string
   description: string
   lead: string
+  image: string
+  imageAlt: string
 }
 
 const ministries: Ministry[] = [
@@ -33,6 +36,8 @@ const ministries: Ministry[] = [
     description:
       'Leads the church in sung worship every Sunday and at special services, blending live instrumentation with contemporary and gospel sound.',
     lead: 'Rehearsals: Saturdays, 4:00 PM',
+    image: '/ministries/choir.jpg',
+    imageAlt: 'The XPH choir leading worship',
   },
   {
     id: 'media',
@@ -42,6 +47,8 @@ const ministries: Ministry[] = [
     description:
       'Runs livestream, sound, photography, and video for every gathering — the team behind the scenes making sure the message reaches beyond the room.',
     lead: 'Open to first-timers with an interest in tech',
+    image: '/ministries/media.jpg',
+    imageAlt: 'The media team running sound and camera',
   },
   {
     id: 'gospel-project',
@@ -51,6 +58,8 @@ const ministries: Ministry[] = [
     description:
       'Our dance ministry — expressing worship and telling scripture through movement at services, events, and outreach programs.',
     lead: 'Rehearsals: Fridays, 5:00 PM',
+    image: '/ministries/gospel-project.jpg',
+    imageAlt: 'The Gospel Project dance team performing',
   },
   {
     id: 'drama',
@@ -60,6 +69,8 @@ const ministries: Ministry[] = [
     description:
       'Brings scripture and everyday testimony to life on stage — sketches, skits, and short performances woven into services and special events.',
     lead: 'No experience required, just a willing heart',
+    image: '/ministries/drama.jpg',
+    imageAlt: 'The drama team performing a sketch on stage',
   },
   {
     id: 'protocol',
@@ -69,6 +80,8 @@ const ministries: Ministry[] = [
     description:
       'The first faces you meet — ushering, welcome, and making sure every person who walks through our doors feels seen and taken care of.',
     lead: 'Serves every Sunday, on a rotation',
+    image: '/ministries/protocol.jpg',
+    imageAlt: 'The protocol team welcoming guests at the door',
   },
 ]
 
@@ -120,11 +133,18 @@ function MinistriesGrid() {
           const Icon = m.icon
           return (
             <article key={m.id} className="ev-card void-card">
-              <div className="px-6 pt-6 flex items-center justify-between">
-                <span className="w-10 h-10 rounded-full bg-[rgba(240,237,230,0.06)] flex items-center justify-center">
+              <div className="relative w-full aspect-[4/3] overflow-hidden">
+                <Image
+                  src={m.image}
+                  alt={m.imageAlt}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 33vw"
+                  className="object-cover object-center"
+                />
+                <span className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[rgba(10,10,10,0.55)] backdrop-blur-sm flex items-center justify-center">
                   <Icon size={18} aria-hidden={true} className="text-bright-green" />
                 </span>
-                <span className="font-headline text-[10px] font-semibold tracking-[.1em] uppercase text-[rgba(240,237,230,0.35)] py-[3px] px-2 border border-[rgba(240,237,230,0.08)] rounded-full">
+                <span className="absolute top-4 right-4 font-headline text-[10px] font-semibold tracking-[.1em] uppercase text-cream py-[3px] px-2 bg-[rgba(10,10,10,0.55)] backdrop-blur-sm border border-[rgba(240,237,230,0.15)] rounded-full">
                   {m.tag}
                 </span>
               </div>
