@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { IconCalendar, IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -23,13 +24,13 @@ function TestimonyHero({ t }: { t: Testimony }) {
       aria-labelledby="testimony-heading"
     >
       <div ref={ref} className="void-card max-w-[760px]">
-        <a
+        <Link
           href="/testimonies"
           className="inline-flex items-center gap-[6px] text-[13px] font-semibold uppercase tracking-[.06em] text-bright-green mb-8 no-underline"
         >
           <IconArrowLeft size={14} aria-hidden={true} />
           Back to the wall
-        </a>
+        </Link>
         <p className="flex items-center gap-[10px] font-headline text-[11px] font-bold uppercase tracking-[.15em] text-bright-green mb-6">
           <span className="w-8 h-[1.5px] bg-bright-green inline-block" aria-hidden={true} />
           {t.category}
@@ -115,7 +116,7 @@ function OtherTestimonies({ others }: { others: Testimony[] }) {
       </div>
       <div ref={ref} className="grid grid-cols-3 gap-6 lt-lg:grid-cols-2 lt-sm:grid-cols-1">
         {others.map((t) => (
-          <a key={t.id} href={`/testimonies/${t.id}`} className="ev-card void-card block">
+          <Link key={t.id} href={`/testimonies/${t.id}`} className="ev-card void-card block">
             <div className="relative w-full aspect-[4/3] overflow-hidden">
               <Image
                 src={t.image}
@@ -134,7 +135,7 @@ function OtherTestimonies({ others }: { others: Testimony[] }) {
                 <IconArrowRight size={14} aria-hidden={true} className="text-bright-green" />
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>
