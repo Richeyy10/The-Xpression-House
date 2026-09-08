@@ -119,7 +119,7 @@ const testimonies: Testimony[] = [
     id: 't1',
     quote:
       'I walked in exhausted and walked out changed. The altar time alone was worth staying up for &#8212; I heard from God in a way I hadn&#8217;t in months.',
-    name: 'Busola Oladipo',
+    name: 'Bukunmi Oladipo',
     role: 'Attended last edition',
   },
   {

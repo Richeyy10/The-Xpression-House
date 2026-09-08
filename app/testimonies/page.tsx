@@ -1,64 +1,19 @@
 'use client'
 
-import { IconQuote } from '@tabler/icons-react'
+import Image from 'next/image'
+import { IconQuote, IconArrowRight } from '@tabler/icons-react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Newsletter from '@/components/Newsletter'
-import ArrowLink from '@/components/ui/ArrowLink'
 import TestimonyAmen from '@/components/TestimonyAmen'
+import TestimonySubmissionForm from '@/components/TestimonySubmissionForm'
 import { useRevealOnScroll, useRevealManyOnScroll } from '@/hooks/useRevealOnScroll'
+import { testimonies } from '@/app/lib/testimonies'
 
-interface Testimony {
-  id: string
-  name: string
-  category: string
-  quote: string
+function truncate(text: string, max = 180) {
+  if (text.length <= max) return text
+  return text.slice(0, max).trim() + '\u2026'
 }
-
-const testimonies: Testimony[] = [
-  {
-    id: 't1',
-    name: 'Bukola A.',
-    category: 'Healing',
-    quote:
-      'I came to XPH during the hardest medical season of my life. Through the prayer team and the community that surrounded me, I watched God turn things around when I had nearly given up hope.',
-  },
-  {
-    id: 't2',
-    name: 'Tobi O.',
-    category: 'Purpose',
-    quote:
-      'I walked into XPH not knowing what I was looking for. A year later, I am serving on the media team, I have real friendships, and I finally understand what it means to belong somewhere.',
-  },
-  {
-    id: 't3',
-    name: 'Chiamaka E.',
-    category: 'Provision',
-    quote:
-      'After months of job searching, I brought it to an Ablaze night and just prayed. Two weeks later, I had an offer. I do not take that timing lightly.',
-  },
-  {
-    id: 't4',
-    name: 'David K.',
-    category: 'Restoration',
-    quote:
-      'My relationship with my family was broken for years. Through the counsel and prayer of people at XPH, I made the first call in a long time. We are rebuilding, one conversation at a time.',
-  },
-  {
-    id: 't5',
-    name: 'Feyisayo T.',
-    category: 'Salvation',
-    quote:
-      'I visited XPH once, planning never to come back to church again. That one Sunday changed the direction of my life completely.',
-  },
-  {
-    id: 't6',
-    name: 'Emeka N.',
-    category: 'Community',
-    quote:
-      'Moving to Ibadan alone was terrifying. My connect group became family faster than I expected — people who actually check on you, not just on Sundays.',
-  },
-]
 
 function TestimoniesHero() {
   const ref = useRevealOnScroll()
@@ -99,18 +54,34 @@ function TestimoniesGrid() {
       </h2>
       <div ref={ref} className="grid grid-cols-3 gap-6 lt-lg:grid-cols-2 lt-sm:grid-cols-1">
         {testimonies.map((t) => (
-          <article key={t.id} className="ev-card void-card p-6">
-            <IconQuote size={22} aria-hidden={true} className="text-bright-green mb-4" />
-            <p className="text-[15px] text-[rgba(240,237,230,0.6)] leading-[1.8] mb-6">
-              &#8220;{t.quote}&#8221;
-            </p>
-            <div className="flex items-center justify-between pt-4 border-t border-[rgba(240,237,230,0.06)]">
-              <span className="text-[14px] font-semibold text-cream">{t.name}</span>
-              <span className="font-headline text-[10px] font-semibold tracking-[.1em] uppercase text-[rgba(240,237,230,0.35)] py-[3px] px-2 border border-[rgba(240,237,230,0.08)] rounded-full">
-                {t.category}
-              </span>
+          <article key={t.id} className="ev-card void-card">
+            <div className="relative w-full aspect-[4/3] overflow-hidden">
+              <Image
+                src={t.image}
+                alt={t.imageAlt}
+                fill
+                sizes="(max-width: 1023px) 100vw, 33vw"
+                className="object-cover object-center"
+              />
             </div>
-            <div className="pt-4">
+            <div className="p-6 flex-1 flex flex-col">
+              <IconQuote size={20} aria-hidden={true} className="text-bright-green mb-4" />
+              <p className="text-[15px] text-[rgba(240,237,230,0.6)] leading-[1.8] mb-4 flex-1">
+                &#8220;{truncate(t.quote)}&#8221;
+              </p>
+              <a
+                href={`/testimonies/${t.id}`}
+                className="inline-flex items-center gap-[6px] text-[13px] font-semibold text-bright-green mb-5 no-underline"
+              >
+                Read full story
+                <IconArrowRight size={13} aria-hidden={true} />
+              </a>
+              <div className="flex items-center justify-between pt-4 border-t border-[rgba(240,237,230,0.06)] mb-4">
+                <span className="text-[14px] font-semibold text-cream">{t.name}</span>
+                <span className="font-headline text-[10px] font-semibold tracking-[.1em] uppercase text-[rgba(240,237,230,0.35)] py-[3px] px-2 border border-[rgba(240,237,230,0.08)] rounded-full">
+                  {t.category}
+                </span>
+              </div>
               <TestimonyAmen testimonyId={t.id} />
             </div>
           </article>
@@ -120,23 +91,26 @@ function TestimoniesGrid() {
   )
 }
 
-function ShareTestimonyCTA() {
+function ShareTestimonySection() {
   const ref = useRevealOnScroll()
   return (
-    <section className="max-w-[1200px] mx-auto px-12 pb-40 lt-lg:px-8 lt-sm:px-3">
-      <div
-        ref={ref}
-        className="void-card border border-[rgba(240,237,230,0.07)] rounded-[8px] bg-forest-green py-16 px-12 text-center lt-lg:px-8 lt-lg:py-10"
-      >
-        <h2 className="font-quote text-[clamp(28px,3.5vw,40px)] font-light leading-[1.2] text-cream mb-4">
+    <section
+      className="max-w-[720px] mx-auto px-12 pb-40 lt-lg:px-8 lt-sm:px-3"
+      aria-labelledby="share-testimony-heading"
+    >
+      <div ref={ref} className="void-card text-center mb-10">
+        <h2
+          id="share-testimony-heading"
+          className="font-quote text-[clamp(28px,3.5vw,40px)] font-light leading-[1.2] text-cream mb-4"
+        >
           Has God done something in <em className="italic text-bright-green font-normal">your</em> life?
         </h2>
-        <p className="text-[15px] text-[rgba(240,237,230,0.5)] leading-[1.8] max-w-[520px] mx-auto mb-8">
-          Your story might be exactly what someone else needs to hear. Share it with us
+        <p className="text-[15px] text-[rgba(240,237,230,0.5)] leading-[1.8] max-w-[520px] mx-auto">
+          Your story might be exactly what someone else needs to hear. Share it below
           and we may feature it here.
         </p>
-        <ArrowLink href="/connect">Share your testimony</ArrowLink>
       </div>
+      <TestimonySubmissionForm />
     </section>
   )
 }
@@ -148,7 +122,7 @@ export default function TestimoniesPage() {
       <main id="main">
         <TestimoniesHero />
         <TestimoniesGrid />
-        <ShareTestimonyCTA />
+        <ShareTestimonySection />
         <Newsletter />
       </main>
       <Footer />
