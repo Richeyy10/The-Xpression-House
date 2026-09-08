@@ -4,15 +4,16 @@ import { testimonies, getTestimonyById, getOtherTestimonies } from '@/app/lib/te
 import TestimonyDetailClient from './TestimonyDetailClient'
 
 interface PageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export function generateStaticParams() {
   return testimonies.map((t) => ({ id: t.id }))
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const testimony = getTestimonyById(params.id)
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params
+  const testimony = getTestimonyById(id)
   if (!testimony) return {}
   return {
     title: `${testimony.name}'s Story — The Xpression House`,
@@ -20,8 +21,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   }
 }
 
-export default function TestimonyPage({ params }: PageProps) {
-  const testimony = getTestimonyById(params.id)
+export default async function TestimonyPage({ params }: PageProps) {
+  const { id } = await params
+  const testimony = getTestimonyById(id)
   if (!testimony) notFound()
 
   const others = getOtherTestimonies(testimony.id)
