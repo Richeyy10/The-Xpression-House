@@ -21,6 +21,21 @@ export interface Sermon {
   episode: number | null
 }
 
+// Shape of a single <item> as returned by fast-xml-parser.
+// Values are loosely typed because the parser may return strings, numbers or objects.
+interface RssItem {
+  title?: unknown
+  description?: unknown
+  pubDate?: string
+  guid?: string | number | { '#text'?: string | number }
+  enclosure?: { '@_url'?: string }
+  'itunes:summary'?: unknown
+  'itunes:duration'?: string | number
+  'itunes:image'?: { '@_href'?: string }
+  'itunes:season'?: unknown
+  'itunes:episode'?: unknown
+}
+
 function stripHtml(input: unknown): string {
   return String(input ?? '')
     .replace(/<[^>]*>/g, ' ')
@@ -74,15 +89,19 @@ export async function getSermons(): Promise<Sermon[] | null> {
     const channel = parsed?.rss?.channel
     if (!channel) return null
 
-    const rawItems = Array.isArray(channel.item) ? channel.item : channel.item ? [channel.item] : []
+    const rawItems: RssItem[] = Array.isArray(channel.item)
+      ? channel.item
+      : channel.item
+        ? [channel.item]
+        : []
 
     const sermons: Sermon[] = rawItems
-      .map((item: any, index: number): Sermon | null => {
+      .map((item, index): Sermon | null => {
         const audioUrl = item?.enclosure?.['@_url']
         if (!audioUrl) return null
 
         const guid = typeof item.guid === 'object' ? item.guid['#text'] : item.guid
-        const parsedDate = new Date(item.pubDate)
+        const parsedDate = new Date(item.pubDate ?? '')
 
         return {
           id: String(guid ?? `${index}-${item.title}`),
@@ -139,7 +158,7 @@ export async function getLatestSermon(): Promise<LatestSermonPayload | null> {
   const parsed = parseSeriesTitle(sermon.title)
   const series: SermonSeries | null = parsed
     ? {
-        name: parsed.name, 
+        name: parsed.name,
         part: parsed.part,
         count: sermons.filter(
           (s) => parseSeriesTitle(s.title)?.name.toLowerCase() === parsed.name.toLowerCase(),
