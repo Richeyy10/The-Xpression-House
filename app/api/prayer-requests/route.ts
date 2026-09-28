@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { addPrayerRequest } from '@/app/lib/prayer-store'
+import { addPrayerRequest } from '@/lib/prayer-store'
 
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null)

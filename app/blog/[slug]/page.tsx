@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { blogPosts, getPostBySlug, getRelatedPosts } from '@/app/lib/blog-posts'
+import { blogPosts, getPostBySlug, getRelatedPosts } from '@/lib/blog-posts'
 import ArticleClient from './ArticleClient'
 
 interface PageProps {

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getComments, addComment } from '@/app/lib/engagement-store'
+import { getComments, addComment } from '@/lib/engagement-store'
 
 interface RouteParams {
   params: Promise<{ slug: string }>

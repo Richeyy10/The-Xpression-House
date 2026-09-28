@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { testimonies, getTestimonyById, getOtherTestimonies } from '@/app/lib/testimonies'
+import { testimonies, getTestimonyById, getOtherTestimonies } from '@/lib/testimonies'
 import TestimonyDetailClient from './TestimonyDetailClient'
 
 interface PageProps {

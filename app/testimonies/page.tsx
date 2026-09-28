@@ -8,7 +8,7 @@ import Newsletter from '@/components/Newsletter'
 import TestimonyAmen from '@/components/TestimonyAmen'
 import TestimonySubmissionForm from '@/components/TestimonySubmissionForm'
 import { useRevealOnScroll, useRevealManyOnScroll } from '@/hooks/useRevealOnScroll'
-import { testimonies } from '@/app/lib/testimonies'
+import { testimonies } from '@/lib/testimonies'
 
 function truncate(text: string, max = 180) {
   if (text.length <= max) return text

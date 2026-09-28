@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import Newsletter from '@/components/Newsletter'
 import ArrowLink from '@/components/ui/ArrowLink'
 import { useRevealOnScroll, useRevealManyOnScroll } from '@/hooks/useRevealOnScroll'
-import { blogPosts } from '@/app/lib/blog-posts'
+import { blogPosts } from '@/lib/blog-posts'
 
 const [featuredPost, ...posts] = blogPosts
 

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { addTestimonySubmission } from '@/app/lib/testimony-submission-store'
+import { addTestimonySubmission } from '@/lib/testimony-submission-store'
 
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null)

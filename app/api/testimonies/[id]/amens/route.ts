@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAmenCount, incrementAmen } from '@/app/lib/testimony-store'
+import { getAmenCount, incrementAmen } from '@/lib/testimony-store'
 
 interface RouteParams {
   params: Promise<{ id: string }>

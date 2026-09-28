@@ -9,7 +9,7 @@ import Newsletter from '@/components/Newsletter'
 import ArrowLink from '@/components/ui/ArrowLink'
 import TestimonyAmen from '@/components/TestimonyAmen'
 import { useRevealOnScroll, useRevealManyOnScroll } from '@/hooks/useRevealOnScroll'
-import type { Testimony } from '@/app/lib/testimonies'
+import type { Testimony } from '@/lib/testimonies'
 
 interface TestimonyDetailClientProps {
   testimony: Testimony

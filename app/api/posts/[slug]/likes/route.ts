@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getLikeCount, incrementLike } from '@/app/lib/engagement-store'
+import { getLikeCount, incrementLike } from '@/lib/engagement-store'
 
 interface RouteParams {
   params: Promise<{ slug: string }>

@@ -9,7 +9,7 @@ import Newsletter from '@/components/Newsletter'
 import ArrowLink from '@/components/ui/ArrowLink'
 import Engagement from '@/components/Engagement'
 import { useRevealOnScroll, useRevealManyOnScroll } from '@/hooks/useRevealOnScroll'
-import type { BlogPost } from '@/app/lib/blog-posts'
+import type { BlogPost } from '@/lib/blog-posts'
 
 interface ArticleClientProps {
   post: BlogPost
